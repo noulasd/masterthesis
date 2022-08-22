@@ -1,4 +1,4 @@
-\documentclass[oneside,a4paper]{article}
+\documentclass{report}
 \input{packages}
 
 \begin{document}
@@ -32,14 +32,67 @@
 \tableofcontents
 \pagebreak
 
-\section{Εισαγωγή}
+\chapter{Εισαγωγή}
 
-\section{Προαπαιτούμενα}
+\chapter{Προαπαιτούμενα}
 
-\subsection{Άλγεβρική Θεωρία Αριθμών}
-\subsection{Κυκλοτομικά Σώματα}
-\subsection{Άπειρη Θεωρία \tl{Galois}}
-\subsection{Θεωρία Κλάσεων Σωμάτων}
+\section{Άλγεβρική Θεωρία Αριθμών}
+
+\noindent Έστω $L/K$ μια πεπερασμένη επέκταση σωμάτων αριθμών με δακτύλιους ακεραίων $\mathcal{O}_L$ και $\mathcal{O}_K$ αντίστοιχα.
+
+\begin{theorem}
+	Κάθε γνήσιο μη-μηδενικό πρώτο ιδεώδες $\mathfrak{a} \subset \mathcal{O}_K$ έχει μοναδική παραγοντοποίηση:
+	$$\mathfrak{a} = \mathfrak{p}_1^{e_1} \cdots \mathfrak{p}_r^{e_r}$$ με $e_i > 0$ και τα $\mathfrak{p}_i$ είναι πρώτα ιδεώδη.
+\end{theorem}
+
+Δοθέντος ενός πρώτου ιδεωδούς $\mathfrak{p} \subset \mathcal{O}_K$, μπορούμε να θεωρήσουμε το ιδεώδες $\mathfrak{p} \mathcal{O}_L$ στον δακτύλιο $\mathcal{O}_L$. Με βάση το προηγούμενο θεώρημα μπορούμε να το παραγοντοποιήσουμε σε γινόμενο πρώτων ιδεωδών:
+\begin{equation}
+	\label{eq2.1}
+	\mathfrak{p}\mathcal{O}_L = \mathfrak{p}_1^{e_1} \cdots \mathfrak{p}_r^{e_r}
+\end{equation}  με τα $\mathfrak{p}_i$ να είναι πρώτα ιδεώδη του $\mathcal{O}_L$.
+
+
+\begin{defn}
+	Σε μια παραγοντοποίηση όπως στην \ref{eq2.1}, λεμε το $e_i = e(\mathfrak{p}_i / \mathfrak{p})$ δείκτη διακλάδωσης του $\mathfrak{p}$ στο $\mathfrak{p}_i$. Θα λέμε ότι το πρώτο ιδεώδες $\mathfrak{p}$ διακλαδίζεται στο $L$ αν ισχύει $e_i >1$ για κάποιο $i$. Ο βαθμός αδράνειας $f_i = f(\mathfrak{p}_i/ \mathfrak{p})$ είναι η διάσταση του διανυσματικού χώρου $\mathcal{O}_L/\mathfrak{p}_i$ πάνω από το πεπερασμένο σώμα $\mathcal{O}_K/\mathfrak{p}$. 
+\end{defn}%residue class field degree f_i
+
+%από εδώ και πέρα μη μηδενικό πρώτο ιδεώδες... ή κατευθείαν σκέτος πρώτος
+\begin{prop}
+	Ένα πρώτο ιδεώδες $\mathfrak{p}$ στο $\mathcal{O}_K$ διακλαδίζεται στο $\mathcal{O}_L$ αν και μόνο αν $\mathfrak{p} \mid \operatorname{disc} (\mathcal{O}_L/\mathcal{O}_K)$.
+\end{prop}
+!Τι σημαίνει $disc(\mathcal{O}_L/\mathcal{O}_K)$; η διακρίνουσα ορίζεται για σώματα αριθμών. Λογικά:
+$$disc_{\mathcal{O}_K} (\mathcal{O}_L) = \det (T_{L/K}(a_ia_j))$$ όπου $a_i$ βάση του $\mathcal{O}_L$ ως $\mathcal{O}_K$-πρότυπο, που σημαίνει τα $a_i$ είναι βάση του $L$ υπεράνω του $K$ (σωστό με βάση \tl{Milne})
+%απόδειξη;
+%theorem 24 number fields σελίδα 50 (περίπου)
+%solid Milne: the primes that ramify σελίδα 53
+%τα ορίζει σελίδα 26 ο Milne
+
+
+\begin{theorem}
+	Με βάση τα παραπάνω έχουμε:
+	\begin{equation}
+		\sum\limits_{i=1}^r e(\mathfrak{p}_i/\mathfrak{p}) f(\mathfrak{p}_i/\mathfrak{p}) = \sum\limits_{i=1}^r e_i f_i = [L:K]
+	\end{equation}
+\end{theorem}
+
+
+Στο εξής θα θεωρούμε ότι η επέκταση $L/K$ είναι \tl{Galois}. Έτσι μπορούμε να απλοιποιήσουμε το προηγούμενο θεώρημα αρκετά. Ξεκινάμε με την ακόλουθη πρόταση.
+
+\begin{prop}
+	Η ομάδα $\Gal(L/K)$ δρα μεταβατικά στο σύνολο των πρώτων ιδεωδών $\mathfrak{p_i}$ του $\mathcal{O}_L$ που βρίσκονται υπεράνω του $\mathfrak{p}$.
+\end{prop}
+
+\begin{proof} Προς άτοπο, έστω ότι $\sigma (\p_i) \neq \p_j$ για κάθε $\sigma \in \Gal (L/K)$. Υπενθυμίζουμε ότι το $\sigma (\p_i)$ θα είναι και αυτό πρώτο ιδεώδες που θα στέκεται πάνω από το $\p$. Καθώς είμαστε σε περιοχές \tl{Dedekind} τα $\p_i$ και $\sigma(p_i)$ θα είναι μεγιστικά. Άρα $\p_i \not\subseteq \sigma(\p_i)$. Από το αντιθετοαντίστροφο του λήμματος αποφυγής πρώτων παίρνουμε ότι 
+	$$\p_i \not\subseteq \bigcup\limits_{\sigma \in \Gal (L/K)} \sigma(\p_i)$$ δηλαδή, υπάρχει $x \in \p_i$ που αποφεύγει όλα τα $\sigma (\p_i)$. Για την νόρμα, παρατηρούμε ότι:
+	$$N_{L/K}(x) = \prod\limits_{\sigma \in \Gal (L/K)} \sigma(x)$$ βρίσκεται μέσα στο $\p = \mathcal{O}_K \cap \p_i$, διότι η νόρμα θα βρίσκεται μέσα στο $\mathcal{O}_K$ καθώς και στο παραπάνω γινόμενο εμφανίζεται το $x$ που ανήκει στο ιδεώδες $\p_i$. Έχουμε ότι $x \not \in \sigma(p_i)$ και άρα $\sigma^{-1}(x) \not \in \p_i$ για κάθε $\sigma \in \Gal (L/K)$. Άρα $\prod \sigma^{-1}(x) = \prod \sigma(x) \not \in \p_i\cap \mathcal{O}_K = \p$, το οποίο είναι άτοπο.
+\end{proof}
+%Υπενθυμίζουμε: robert ash proposition 8.1.1 
+%prime avoidance robert ash section 3.1 problems
+
+
+\section{Κυκλοτομικά Σώματα}
+\section{Άπειρη Θεωρία \tl{Galois}}
+\section{Θεωρία Κλάσεων Σωμάτων}
 
 \end{document}
 

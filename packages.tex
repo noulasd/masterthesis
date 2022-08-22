@@ -35,6 +35,14 @@
 
 \usepackage{graphicx,import}
 
+\usepackage{titlesec}    
+\titleformat{\chapter}[display]
+{\normalfont%
+    \huge% %change this size to your needs for the first line
+    \bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
+    \Huge %change this size to your needs for the second line
+    }
+
 \usepackage[n, % o r lambda
 advantage,
 operators,
@@ -53,11 +61,11 @@ oracles,
 asymptotics,
 keys ]{cryptocode}
 
-\newtheorem*{theorem}{Θεώρημα}
-\newtheorem*{lemma}{Λήμμα}
-\newtheorem*{example}{Παράδειγμα}
-\newtheorem*{defn}{Ορισμός}
-\newtheorem*{prop}{Πρόταση}
+\newtheorem{theorem}{Θεώρημα}
+\newtheorem{lemma}{Λήμμα}
+\newtheorem{example}{Παράδειγμα}
+\newtheorem{defn}{Ορισμός}
+\newtheorem{prop}{Πρόταση}
 \newtheorem{cor}{Πόρισμα}
 \newtheorem*{remark}{Παρατήρηση}
 
@@ -74,6 +82,9 @@ keys ]{cryptocode}
 \newcommand{\Co}{\mathbb{C}}
 \newcommand{\So}{\mathcal{S}}
 \newcommand{\C}{\mathcal{C}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\p}{\mathfrak{p}}
+
 
 \newcommand{\Sheaf}{(\So, \pi, X)}
 \usepackage{listings}
