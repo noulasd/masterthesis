@@ -61,12 +61,19 @@ oracles,
 asymptotics,
 keys ]{cryptocode}
 
-\newtheorem{theorem}{Θεώρημα}
-\newtheorem{lemma}{Λήμμα}
-\newtheorem{example}{Παράδειγμα}
-\newtheorem{defn}{Ορισμός}
-\newtheorem{prop}{Πρόταση}
-\newtheorem{cor}{Πόρισμα}
+\newtheorem{theorem}{Θεώρημα}[chapter]
+\newtheorem{defn}[theorem]{Ορισμός}
+\newtheorem{prop}[theorem]{Πρόταση}
+\newtheorem{cor}[theorem]{Πόρισμα}
+\newtheorem{lemma}[theorem]{Λήμμα}
+%\newtheorem{lemma}{Λήμμα}
+%\newtheorem{example}{Παράδειγμα}
+%\newtheorem{defn}{Ορισμός}
+%\newtheorem{prop}{Πρόταση}
+%\numberwithin{defn}{chapter}
+%\numberwithin{prop}{chapter}
+%\numberwithin{theorem}{chapter}
+%\newtheorem{cor}{Πόρισμα}
 \newtheorem*{remark}{Παρατήρηση}
 
 \newcommand {\tl}{\textlatin}
@@ -83,7 +90,9 @@ keys ]{cryptocode}
 \newcommand{\So}{\mathcal{S}}
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\Frob}{\operatorname{Frob}}
 \newcommand{\p}{\mathfrak{p}}
+\newcommand{\q}{\mathfrak{q}}
 
 
 \newcommand{\Sheaf}{(\So, \pi, X)}

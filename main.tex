@@ -89,8 +89,193 @@ $$disc_{\mathcal{O}_K} (\mathcal{O}_L) = \det (T_{L/K}(a_ia_j))$$ όπου $a_i$
 %Υπενθυμίζουμε: robert ash proposition 8.1.1 
 %prime avoidance robert ash section 3.1 problems
 
+\begin{cor}
+	Έστω $L/K$ \tl{Galois} επέκταση και $0 \neq \p \subset \mathcal{O}_K$ πρώτο ιδεώδες. Τότε $e(\p_i/ \p) = e(\p_j/ \p) = e$ και $f(\p_i / \p) = f(\p_j /\p)=f$ για κάθε $i,j$ της εξίσωσης \ref{eq2.1}. Ειδικότερα, έχουμε $[L:K] = ref$.
+\end{cor}
+\begin{proof}
+	Ο αυτομορφισμός $\sigma$ διατηρεί τις αλγεβρικές σχέσεις:
+	$$\sigma (\p \mathcal{O}_L) = \prod\limits_{i=1}^r \sigma(p_i)^{e_i} = \prod\limits_{i=1}^r \p_i^{e_i} = \p \mathcal{O}_L$$ και συγκρίνουμε τους εκθέτες για να πάρουμε ότι είναι ίδιοι. Αν $\sigma(\p_i) = \p_j$ τότε παίρνουμε $f_i = f_j$ από τον ισομορφισμό πεπερασμένων σωμάτων:
+	$$\mathcal{O}_L / \p_i \simeq \mathcal{O}_L / \p_j$$ από τον επιμορφισμό που επάγει ο $\sigma$:
+	$$\mathcal{O}_L \longrightarrow \mathcal{O}_L / \p_j $$
+	$$x \longmapsto \sigma(x) + \p_j$$
+\end{proof}
+
+
+Για $[L:K]=n$ υπενθυμίζουμε την ορολογία:
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+	\hline
+	 & $e$ & $f$ & $r$ \\
+	\hline
+	 αδρανές $\quad \quad \quad \quad \quad \quad$ & 1 & $n$ & 1\\ 
+	 πλήρως διακλαδιζόμενο & $n$ & 1 & 1 \\ 
+	 πλήρως διασπώμενο $\quad $& 1 & 1 & $n$ \\ 
+	 \hline
+	 \end{tabular}
+	\end{center}
+
+\begin{defn}
+	Έστω $\q$ ένα πρώτο ιδεώδες του $\mathcal{O}_L$. Η υποομάδα $D_{\q} = \{\sigma \in \Gal (L/K): \sigma(\q) = \q\}$ λέγεται η ομάδα διάσπασης του $\q$ υπεράνω του $K$.
+\end{defn}
+
+Από την πρόταση 2.5 και το θεώρημα \tl{orbit-stabilizer} παίρνουμε το ακόλουθο πόρισμα.
+
+\begin{cor}
+	Για $L/K$ επέκταση όπως παραπάνω και $\p$ πρώτο ιδεώδες του $\mathcal{O}_K$ έχουμε:
+	\begin{enumerate}
+		\item $[\Gal(L/K) : D_{\q}] = r$ για κάθε $\q \mid \p$.
+		\item $D_{\q} = 1$ αν και μόνο αν το $\p \mathcal{O}_L$ διασπάται πλήρως.
+		\item $D_{\q} = \Gal(L/K)$ αν και μόνο αν το $\p \mathcal{O}_L$ διακλαδίζεται πλήρως, δηλαδή $\p \mathcal{O}_L = \q^{n}$ για $n=[L:K]$.
+		\item $|D_{\q}| = ef$. 
+	\end{enumerate}
+\end{cor}
+
+Έχουμε μια φυσική απεικόνιση:
+$$D_{\q} \longrightarrow \Gal \left( (\mathcal{O}_L/\q) / (\mathcal{O}_K/\p)\right)$$ που ένα $\sigma \in D_{\q}$ εφόσον κρατάει σταθερό το $\q$ επάγει έναν $\mathcal{O}_L/\q$-αυτομορφισμό $\overline{\sigma}$ ο οποίος κρατάει σταθερό το υπόσωμα $\mathcal{O}_K/\p$, αφού ο $\sigma$ κρατάει σταθερό το $K$. Αποδεικνύεται ότι αυτή η απεικόνιση είναι επί \tl{(S. Lang ANT prop 14)}. %8.1.8 robert b ash
+
+\begin{defn}
+	Ο πυρήνας $I_{\q} \subseteq D_{\q}$ του παραπάνω ομομορφισμού λέγεται ομάδα αδράνειας του $\q$ υπεράνω του $K$. Ισχύει ότι:
+	$$I_{\q} = \{s \in D_{\q}: \ \sigma(x) = x \mod \q \ \forall x \in L\}$$
+\end{defn}
+
+Από το πόρισμα 2.8 έχουμε ότι:
+\begin{cor}
+	Για $L/K$ επέκταση όπως παραπάνω έχουμε ότι $|I_{\q}| = e$.
+\end{cor}
+
+
+%θεωρία πεπερασμένων σωμάτων Μαλιάκας Galois κεφ 9.
+Από την θεωρία πεπερασμένων σωμάτων, η ομάδα \tl{Galois} πεπερασμένου σώματος είναι κυκλική και ένας γεννήτορας είναι ο $\sigma(x) = x^q$, όπου $q$ είναι η τάξη του υποσώματος. Αυτός ο γεννήτορας είναι γνωστός ως ο αυτομορφισμός του \tl{Frobenius}. Στην περίπτωσή μας με $q = |\mathcal{O}_K/\p|$ και $\q \mid \p$ υπάρχει δηλαδή ένας αυτομορφισμός $\overline{\sigma_{\q}}$ του $\mathcal{O}_L/\q$ που σταθεροποιεί το $\mathcal{O}_K/\p$ που δίνεται από την σχέση $\overline{\sigma_{\q}}(x + \q) = x^q + \q$. Άρα από τον ισομορφισμό:
+$$D_{\q}/ I_{\q} \simeq \Gal \left( (\mathcal{O}_L/\q) / (\mathcal{O}_K/\p) \right)$$
+
+
+Έχουμε ότι κάποιο σύμπλοκο $\sigma_{\q} + I_{\q}$ θα αντιστοιχεί στον αυτομορφισμό του \tl{Frobenius}. Κάθε στοιχείο του συμπλόκου θα λέγεται αυτομορφισμός του \tl{Frobenius} στο $\q$ και θα συμβολίζεται με $\Frob_{\q}$. Αν η ομάδα αδράνειας $I_{\q}$ είναι τετριμμένη, δηλαδή $e=1$ και το $\p$ δεν διακλαδίζεται, τότε υπάρχει καλά ορισμένο στοιχείο $\Frob_{\q} \in D_{\q}$. Είναι σημαντικό να μπορούμε να συσχετίσουμε τα $\Frob_{\q_1}$ και $\Frob_{\q_2}$ για διαφορετικά πρώτα ιδεώδη $\q_i \mid \p$. Ξέρουμε ότι υπάρχει $\tau \in \Gal(L/K)$ με $\tau(\q_1) = \q_2$ και εύκολα φαίνεται ότι $D_{\q_2} = \tau D_{\q_1} \tau^{-1}$, καθώς και $\Frob_{\q_2} = \tau \Frob_{\q_1} \tau^{-1}$. Αν η $\Gal(L/K)$ είναι αβελιανή και το $\p$ δεν διακλαδίζεται στο $L$, τότε μπορούμε να ξεχωρίσουμε μοναδικό στοιχείο της $\Gal(L/K)$ που βρίσκεται στην $D_{\q}$ για κάθε $\q \mid \p$. Αυτό το στοιχείο θα το λέμε $\Frob_{\p}$.
+
+
+%εύκολα: κοιτάω σ \in D_{\q_1} ότι τστ^{-1}(q_2) = ... = q_2 
+%Frob: σ(χ) = χ^τάξη O_K/p mod q
+% στ^{-1}(χ) = τ^{-1}(χ)^τάξη = (ομομορφισμός) τ^{-1}(χ^τάξη) και παίρνω τ στα δύο μέλη
+
+\begin{prop}
+	Έστω $L/K$ επέκταση \tl{Galois} και $\p$ πρώτο ιδεώδες του $\mathcal{O}_K$ και $\q$ πρώτο ιδεώδες του $\mathcal{O}_L$ με $\q \mid \p$. \tl{Completions}!
+\end{prop}
+
+
 
 \section{Κυκλοτομικά Σώματα}
+%In this section we recall some basic facts about cyclotomic fields. These number
+%fields will be the primary focus of classical Iwasawa theory, so we give some of
+%the relevant details in this section.
+
+
+\begin{defn}Μια πρωταρχική $n$-οστή ρίζα της μονάδας είναι ένας αριθμός $\zeta_n \in \mathbb{C}$ τέτοιος ώστε $\zeta_n^n = 1$ και $\zeta_n^m \neq 1$ για κάθε $0<m<n$. Το σώμα $\Q(\zeta_n)$ λέγεται το $n$-οστό κυκλοτομικό σώμα. 
+\end{defn}
+Ορίζουμε το $n$-οστό κυκλοτομικό πολυώνυμο $\Phi_n(x)$ ως εξής:
+$$\Phi_n(x) = \prod\limits_{\substack{ 0 < m < n \\ \gcd(m,n)=1}} (x - \zeta_n^m)$$
+
+Οι ρίζες του πολυωνύμου είναι ακριβώς οι πρωταρχικές $n$-οστές ρίζες της μονάδας. Έχουμε $\deg (\Phi_n) = \phi(n)$. Επιπλέον ισχύει ότι $\Phi_n(x) \in \Q[x]$. Αυτό φαίνεται από την σχέση
+
+\begin{equation} \label{eq2.2}
+	x^n-1 = \prod\limits_{d \mid n} \Phi_d(x)
+\end{equation}
+
+και με επαγωγή στο $n$. Αφού $\Phi_n(\zeta_n) = 0$ έχουμε ότι $[\Q(\zeta_n):\Q] \leq \phi(n)$. Έχουμε ότι η επέκταση $\Q(\zeta_n)/\Q$ είναι \tl{Galois} αφού το $\Phi_n$ διασπάται πλήρως στο $\Q(\zeta_n)$. Εφαρμόζοντας τον μετασχηματισμό \tl{Möbius} στην εξίσωση 2.3 παίρνουμε:
+$$\Phi_n(x) = \prod\limits_{d\mid n} (x^d-1)^{\mu(n/d)}$$
+
+\begin{lemma}Έστω $n=p^r$ όπου $p$ πρώτος. Τότε:
+	\begin{enumerate}
+	\item $[\Q(\zeta_{p^r}):\Q] = \phi(p^r) = p^r-p^{r-1}$.
+	%ως ιδεώδη:
+	\item $p \mathcal{O}_{\Q(\zeta_{p^r})} = (1-\zeta_{p^r})^{\phi(p^r)}$ και το $(1-\zeta_{p^r})$ είναι πρώτο ιδεώδες του $\mathcal{O}_{\Q(\zeta_{p^r})}$.
+	\item $\mathcal{O}_{\Q(\zeta_{p^r})} = \Z[\zeta_{p^r}]$.
+	\item $\Delta_{\Q(\zeta_{p^r})} = \pm p^{p^{r-1}(pr-r-1)}$. 
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	Άρχικά έχουμε $\Z[\zeta_{p^r}]\subseteq \mathcal{O}_{\Q(\zeta_{p^r})}$ αφού τα στοιχεία του πρώτου είναι άθροισμα ακεραίων της μορφής $\sum\limits_{i=0}^{p^r-1} a_i \zeta_{p^r}^i$ και τα ακέραια στοιχεία αποτελούν δακτύλιο.
+	Αν $\zeta_{p^r}^{\prime}$ είναι μια άλλη $p^r$ ρίζα της μονάδας, τότε υπάρχουν $s,t\in\Z$ με $p\not\mid st$ και $\zeta_{p^r} = (\zeta_{p^r}^{\prime})^t, \zeta_{p^r}^{\prime} = \zeta_{p^r}^s$. Έτσι, $\Q(\zeta_{p^r}) = \Q(\zeta_{p^r}^{\prime})$ και $\Z[\zeta_{p^r}] = \Z[\zeta_{p^r}^{\prime}]$. Επιπλέον,
+	
+	$$\frac{1-\zeta^{\prime}_{p^r}}{1-\zeta_{p^r}} = \frac{1-\zeta^s_{p^r}}{1-\zeta_{p^r}} = 1 + \zeta_{p^r} + \cdots + \zeta_{p^r}^{s-1} \in \Z[\zeta_{p^r}]$$ και όμοια, $(1-\zeta_{p^r})/(1-\zeta_{p^r}^{\prime}) \in \Z[\zeta_{p^r}]$. Αρα το $(1-\zeta^{\prime}_{p^r})$ είναι αντιστρέψιμο στο $\Z[\zeta_{p^r}]$ και άρα και στο $\mathcal{O}_{\Q(\zeta_{p^r})}$.
+
+	$$\Phi_{p^r} (x) = \frac{x^{p^r}-1}{x^{p^{r-1}}-1} = \frac{t^p - 1}{t-1} = 1+t+\cdots + t^{p-1}, \ t = x^{p^{r-1}}$$ και $\Phi_{p^r}(1) = p$. Από τους ορισμούς φαίνεται ότι:
+	\begin{align*}
+		\Phi_{p^r}(1) &= \prod (1-\zeta^{\prime}_{p^r}) \\
+		&= \prod \frac{1-\zeta^{\prime}_{p^r}}{1-\zeta_{p^r}}(1-\zeta_{p^r}) \\
+		&= u (1-\zeta_{p^r})^{\phi(p^r)} 
+	\end{align*}
+	με $u$ αντιστρέψιμο στοιχείο του $\Z[\zeta_{p^r}]$. Άρα παίρνουμε ισότητα στα ιδεώδη του $\mathcal{O}_{\Q(\zeta_{p^r})}$, δηλαδή $p\mathcal{O}_{\Q(\zeta_{p^r})} = (1-\zeta_{p^r})^{\phi(p^r)}$. Συνεπώς, το ιδεώδες $p\mathcal{O}_{\Q(\zeta_{p^r})}$ έχει τουλάχιστον $\phi(p^r)$ πρώτους παράγοντες στο $\mathcal{O}_{\Q(\zeta_{p^r})}$. Άρα (?) παίρνουμε $[\Q(\zeta_{p^r}):\Q] \geq \phi(p^r)$ και συνεπώς 
+	$$[\Q(\zeta_{p^r}):\Q] = \phi(p^r) = p^r - p^{r-1}$$
+	Επιπλέον, το $(1-\zeta_{p^r})$ παράγει πρώτο ιδεώδες αλλιώς θα είχαμε παραπάνω από $\phi(p^r)$ πρώτους στην παραγοντοποίηση του $p\mathcal{O}_{\Q(\zeta_{p^r})}$. Για την διακρίνουσα, χρησιμοποιούμε τον τύπο με την παράγωγο από την βιβλιογραφία (π.χ. \tl{Milne ANT prop 2.33})
+	
+	$$disc(\Z[\zeta_{p^r}]/\Z) = \pm N_{\Q(\zeta_{p^r})/\Q} (\Phi^{\prime}_{p^r}(\zeta_{p^r}))$$. Έχουμε
+	$$\Phi^{\prime}_{p^r}(\zeta_{p^r}) = \frac{p^r \zeta_{p^r}^{p^r-1}}{\zeta_{p^r}^{p^{r-1}}-1}$$ και
+	$$N(\zeta_{p^r}) = \pm 1$$ αρα
+	$$N(p^r) = (p^r)^{\phi(p^r)} = p^{r\phi(p^r)}$$ και ισχυριζόμαστε ότι:
+	$$N(1-\zeta_{p^r}^{p^s}) = p^{p^s}, \ 0\leq s < r$$
+	Πράγματι, το ελάχιστο πολυώνυμο του $1-\zeta_{p^r}$ είναι το $\Phi_{p^r}(1-x)$ που έχει σταθερό όρο $\Phi_{p^r}(1) = p$. Αρα $N(1-\zeta_{p^r})= \pm p$. Έστω $s<r$, το $\zeta_{p^r}^{p^s}$ είναι πρωταρχική $p^{r-s}$-οστή ρίζα της μονάδας, άρα ο ίδιος υπολογισμός για $r-s$ αντί για $r$ δίνει $N_{\Q(\zeta_{p^r}^{p^s})/\Q}(1-\zeta^{p^s}_{p^r}) = \pm p$. Χρησιμοποιώντας την προσεταιριστικότητα  της νόρμας, μαζί με $N_{M/L}(a) = a^{[M:L]}$ για σώματα $M\supset L$, παίρνουμε ότι:
+	$$N_{\Q(\zeta_{p^r})/\Q} (1-\zeta^{p^s}_{p^r}) = p^a$$ όπου
+	$$a = [\Q(\zeta_{p^r}):\Q(\zeta^{p^s}_{p^r})] = \phi(p^r)/\phi(p^{r-s}) = p^s$$
+
+	Συνεπώς, $N(\Phi^{\prime}_{p^r}(\zeta_{p^r})) =\pm p^c$ όπου $c = p^{r-1}(pr-r-1)$. Άρα η διακρίνουσα του $\Z[\zeta_{p^r}]$ πάνω από το $\Z$ είναι δύναμη του $p$. Άρα και η διακρίνουσα του $\mathcal{O}_{\Q(\zeta_{p^r})}$ πάνω από το $\Z$ είναι δύναμη του $p$ από τον τύπο:
+	$$disc(\mathcal{O}_{\Q(\zeta_{p^r})}/\Z) [\mathcal{O}_{\Q(\zeta_{p^r})}: \Z[\zeta_{p^r}]]^2 = disc(\Z[\zeta_{p^r}/\Z])$$
+	(\tl{Milne remark 2.24})
+
+	%τι πηλίκο είναι το παρακάτω; το p^M κάνει annihilate
+	Επιπλέον, έχουμε ότι το $[\mathcal{O}_{\Q(\zeta_{p^r})}: \Z[\zeta_{p^r}]]$ είναι δύναμη του $p$, άρα $p^M (\mathcal{O}_{\Q(\zeta_{p^r})}/\Z[\zeta_{p^r}]) = 0$ για κάποιο $M$. Δηλαδή, $p^M \mathcal{O}_{\Q(\zeta_{p^r})} \subseteq \Z[\zeta_{p^r}]$. Το χρησιμοποιούμε αυτό για το ιδεώδες $\p = (1-\zeta_{p^r})$ και έχουμε $f(\p/p) =1$ και άρα η παρακάτω απεικόνιση είναι ισομορφισμός:
+
+	$$\Z / p\Z \longrightarrow \mathcal{O}_{\Q(\zeta_{p^r})/(1-\zeta_{p^r})}$$
+	Άρα $\Z + (1-\zeta_{p^r})\mathcal{O}_{\Q(\zeta_{p^r})} = \mathcal{O}_{\Q(\zeta_{p^r})}$ και άρα επίσης:
+	\begin{equation} \label{eq2.3}
+		\Z[\zeta_{p^r}] + (1-\zeta_{p^r})\mathcal{O}_{\Q(\zeta_{p^r})} = \mathcal{O}_{\Q(\zeta_{p^r})} 
+	\end{equation}
+	η οποία δίνει:
+	\begin{equation} \label{eq2.4}
+		(1-\zeta_{p^r}) \Z[\zeta_{p^r}] + (1-\zeta_{p^r})^2 \mathcal{O}_{\Q(\zeta_{p^r})} = (1-\zeta_{p^r}) \mathcal{O}_{\Q(\zeta_{p^r})}
+	\end{equation}
+
+	Έστω $a \in \mathcal{O}_{\Q(\zeta_{p^r})}$. Τότε από την εξίσωση \ref{eq2.3} παίρνουμε ότι $a=a^{\prime} + \gamma$ με $a^{\prime} \in (1-\zeta_{p^r})\mathcal{O}_{\Q(\zeta_{p^r})}$ και $\gamma \in \Z[\zeta_{p^r}]$. Η εξίσωση \ref{eq2.4} δίνει $a^{\prime} = a^{\prime\prime} + \gamma^{\prime}$ με $a^{\prime\prime} \in (1-\zeta_{p^r})^2 \mathcal{O}_{\Q(\zeta_{p^r})}$ και $\gamma^{\prime} \in \Z[\zeta_{p^r}]$. Άρα $a = (\gamma+\gamma^{\prime}) + a^{\prime\prime}$. Συνεπώς:
+	$$\Z[\zeta_{p^r}]+ (1-\zeta_{p^r})^2 \mathcal{O}_{\Q(\zeta_{p^r})} = \mathcal{O}_{\Q(\zeta_{p^r})}$$
+
+	Με επανάληψη, μπορούμε να πάρουμε $\Z[\zeta_{p^r}] + (1-\zeta_{p^r})^m \mathcal{O}_{\Q(\zeta_{p^r})} = \mathcal{O}_{\Q(\zeta_{p^r})}$ για $m \in \mathbb{N}$. Καθώς $(1-\zeta_{p^r})^{\phi(p^r)} = p\cdot u$, $u$ αντιστρέψιμο, έχουμε $\Z[\zeta_{p^r}]+ p^m \mathcal{O}_{\Q(\zeta_{p^r})} = \mathcal{O}_{\Q(\zeta_{p^r})}$ για κάθε $m\in\mathbb{N}$. Ωστόσο, για αρκετά μεγάλο $m$ έχουμε δείξει ότι $p^m \mathcal{O}_{\Q(\zeta_{p^r})} \subseteq \Z[\zeta_{p^r}]$. Άρα πράγματι $\Z[\zeta_{p^r}] = \mathcal{O}_{\Q(\zeta_{p^r})}$. Αυτό μαζί με τον υπολογισμό του $disc(\Z[\zeta_{p^r}]/\Z)$ ολοκληρώνουν την απόδειξη.  
+\end{proof}
+
+Μαζί με το ακόλουθο λήμμα, θα γενικεύσουμε την πρόταση για $n \in \mathbb{N}$.
+%milne lemma 6.5
+\begin{lemma}
+	Έστω $K,L$ πεπερασμένες επεκτάσεις του $\Q$ με
+	$$[KL:\Q] = [K:\Q]\cdot [L:\Q]$$ και έστω $d = \gcd \left( \operatorname{disc}(\mathcal{O}_K/\Z), \operatorname{disc}(\mathcal{O}_L/\Z)\right)$. Τότε
+	$$O_{KL} \subset d^{-1} \mathcal{O}_K \mathcal{O}_L$$
+\end{lemma}
+
+\begin{prop}
+	Έστω $\zeta_n$ μια πρωταρχική $n$-οστή ρίζα της μονάδας και $K= \Q(\zeta_n)$. Ισχύουν τα ακόλουα:
+	\begin{enumerate}
+		\item $[K:\Q] = \phi(n)$.
+		\item $\mathcal{O}_K = \Z[\zeta_n]$.
+		\item Ο πρώτος $p$ διακλαδίζεται στο $K$ αν και μόνο αν $p\mid n$ (εκτός αν $n=2\cdot$περιττός και $p=2$). Ειδικότερα, αν $n=p^r$ με $\gcd(p,m)=1$, τότε 
+		$$p \mathcal{O}_K = (\p_1 \cdots \p_s)^{\phi(p^r)}$$ στο $K$ με τα $\p_i$ να είναι διακεκριμένοι πρώτοι στο $K$. %πρώτα ιδεώδη στο O_K αλλά το ίδιο είναι αν δω τα ιδεώδη που παράγονται από τους πρώτους
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+
+	Με επαγωγή στο πλήθος των πρώτων που διαιρούν το $n$. Θεωρούμε τα σώματα:
+	\begin{figure}[H]
+		\centering
+	\begin{tikzcd}
+		& K = \Q(\zeta_n)                            &                                   \\
+E=\Q(\zeta_{p^r}) \arrow[ru, no head] &                                            & F=\Q(\zeta_m) \arrow[lu, no head] \\
+		& \Q \arrow[lu, no head] \arrow[ru, no head] &                                  
+\end{tikzcd}
+\end{figure}
+και κοιτάμε πώς το $p$ παραγοντοποιείται στα $E,F$.
+$p\mathcal{O}_E = \p^{\phi(p^r)}$ διακλαδίζεται πλήρως όπως δίνεται από το προηγούμενη πρόταση.
+$p\mathcal{O}_F = \p_1\cdots \p_r$ δεν διακλαδίζεται καθώς το $p$ είναι σχετικά πρώτο με την διακρίνουσα.
+
+Τώρα, κοιτάμε την παραγοντοίηση
+\end{proof}
+
 \section{Άπειρη Θεωρία \tl{Galois}}
 \section{Θεωρία Κλάσεων Σωμάτων}
 
