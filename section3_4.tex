@@ -1,0 +1,216 @@
+\section{Θεώρημα \tl{Herbrand}}
+
+
+\noindent Σε αυτή την ενότητα θα αποδείξουμε ένα ισχυρότερο κριτήριο από το θεώρημα \ref{3.33} κοιτώντας κομμάτια της ομάδας 
+κλάσεων αντί για ολόκληρη την ομάδα. Αυτή η περιγραφή είναι γνωστή ως το θεώρημα του \tl{Herbrand}. 
+Θα αναφέρουμε επίσης το αντίστροφο σε αυτό το θεώρημα που απευθύνεται στον \tl{Ribet} \cite{Ribet}. Η απόδειξη του αντιστρόφου 
+δίνει μια εικόνα της μεθόδου που χρησιμοποίησε ο \tl{Wiles} για να αποδείξει την κύρια εικασία της θεωρίας \tl{Iwasawa} για τα 
+πλήρως πραγματικά σώματα στο \cite{Wiles2}.
+
+Το τι εννούμε με τα κομμάτια της ομάδας κλάσεων ιδεωδών θα γίνει ξεκάθαρο στη συνέχεια. Έστω $G$ μια πεπερασμένη αβελιανή 
+ομάδα και $G^\wedge$ η πολλαπλασιαστική ομάδα των χαρακτήρων της $G$ όπως προηγουμένως. Έστω $R$ ένας μεταθετικός δακτύλιος 
+που περιέχει το $|G|^{-1}$ καθώς και όλες τις τιμές των $x \in G^{\wedge}$. Ορίζουμε τα κάθετα ταυτοδύναμα στοιχεία του 
+ομαδοδακτύλιου $R[G]$ να είναι τα στοιχεία
+
+$$\epsilon_{\chi} = \frac{1}{|G|} \sum\limits_{\sigma \in G} \chi(\sigma)\sigma^{-1} \in R[G].$$
+
+\begin{prop} Ισχύουν τα ακόλουθα:
+	\begin{enumerate}
+		\item $\varepsilon^2_{\chi} = \varepsilon_\chi$.
+		\item $\varepsilon_\chi \varepsilon_\psi = 0$ αν $\chi \neq \psi$.
+		\item $\sum\limits_{x\in G^{\wedge}} \varepsilon_\chi = 1$.
+		\item $\varepsilon_\chi \sigma = \chi(\sigma) \varepsilon_\chi$.
+		
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}$ $
+
+	\begin{enumerate}
+		
+		\item Το να πούμε ότι τα $\sigma, h$ διατρέχουν τα στοιχεία της $G$ είναι το ίδιο με το να πούμε τα $g=\sigma h$ και $\sigma$ διατρέχουν την $G$, όπου αναγκαστικά $h=\sigma^{-1}g$. Συνεπώς
+	\begin{align*}
+		\varepsilon^2_\chi &= \frac{1}{|G|^2} \sum\limits_{\sigma,h \in G} \chi(\sigma)\chi(h) \sigma^{-1}h^{-1} \\
+		&= \frac{1}{|G|^2}\sum\limits_{\substack{g = \sigma h\\ \sigma \in G}} \sum\limits_{g \in G} \chi(g)g^{-1} \\
+		&= \frac{1}{|G|} \sum\limits_{\sigma \in G} \varepsilon_{\chi} \\
+		&= \varepsilon_{\chi}
+	\end{align*}
+
+		\item
+		\begin{align*}
+			\varepsilon_\chi \varepsilon_\psi &= \frac{1}{|G|^2} \sum\limits_{\sigma,h \in G} \chi(\sigma)\psi(h) \sigma^{-1}h^{-1} \\
+		&= \frac{1}{|G|^2} \sum\limits_{\sigma \in G} \left(\sum\limits_{h \in G} \chi(h)\psi(\sigma h^{-1})\right) \sigma^{-1} \\
+		&= 0
+\end{align*}
+\noindent καθώς από τις σχέσεις ορθογωνιότητας χαρακτήρων έχουμε
+$$\sum\limits_{h \in G} \chi(h) \psi(\sigma h^{-1}) = \psi(\sigma) \sum\limits_{h \in G}\chi(h)\psi^{-1}(h) = 0$$
+%απόδειξη χωρίς το όλο Wedderburn-Artin έχει ο Γιαννόπουλος για χαρακτήρες Dirichlet modulo k στην αναλυτική θεωρία αριθμών.	
+
+
+\item 
+\begin{align*} \sum\limits_{\chi \in G^{\wedge}} \varepsilon_{\chi} &= \frac1{|G|} \sum\limits_{\chi \in G^{\wedge}} \chi(g) g^{-1} \\
+	&= \frac1{|G|} \sum\limits_{g \in G}\left(\sum\limits_{\chi \in G^{\wedge}} \chi(g)\right) g^{-1} \\
+	&= \frac{1}{|G|} \left(|G| \cdot 1_G\right)\\
+	&= 1_G
+ \end{align*}
+ \noindent εφόσον
+ $$\sum\limits_{\chi \in G^{\wedge}}\chi(g) = \begin{cases}
+	|G|, & \text{ αν } g=1_G \\
+	0, & \text{ διαφορετικά } \end{cases} $$
+\noindent το οποίο είναι αναδιατύπωση της σχέσης ορθογωνιότητας 
+$$\sum\limits_{\chi \in G^{\wedge}} \chi(g) \chi^{-1}(h) =  \sum\limits_{\chi \in G^{\wedge}} \chi(gh^{-1}) = \begin{cases}
+	|C_G(g)|, & \text{ αν } g,h \text{ συζυγή} \\
+	0, & \text{ διαφορετικά }\end{cases}$$ και εφόσον η $G$ είναι αβελιανή έχουμε $C_G(g) = G$ και τα $g,h$ είναι συζυγή αν και μόνο αν $g=h$.
+
+\item Αρκεί να παρατηρήσουμε ότι καθώς το $g$ διατρέχει τα στοιχεία της $G$, το ίδιο κάνει και το $\sigma g$
+\begin{align*} \varepsilon_\chi \sigma &= \frac{1}{|G|} \sum\limits_{g \in G} \chi(g)g^{-1}\sigma \\
+	&= \frac{1}{|G|} \sum\limits_{g \in G} \chi(\sigma g)(\sigma g)^{-1}\sigma \\
+	&= \frac{\chi(\sigma)}{|G|} \sum\limits_{g \in G} \chi(g)g^{-1} \\
+	&= \chi(\sigma) \varepsilon_{\chi}
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+
+\noindent Με τα παραπάνω έχουμε αποδείξει το ακόλουθο θεώρημα:
+
+\begin{theorem}
+	Έστω $M$ ένα $R[G]$-πρότυπο. Τότε έχουμε $M=\bigoplus_{\chi} \varepsilon_\chi M$.
+\end{theorem}
+
+$ $\newline
+Παρατηρούμε ότι αν δούμε ένα $\sigma \in G$ να δρα στο $M$, τότε ο χώρος $\varepsilon_{\chi}M$ είναι ο ιδιοχώρος της δράσης με ιδιοτιμή $\chi(\sigma)$.
+Θα ειδικεύσουμε τώρα στην περίπτωση που το πρότυπο που κοιτάμε είναι μια ομάδα κλάσεων ιδεωδών. Έστω $C$ η ομάδα κλάσεων ιδεωδών μιας 
+αβελιανής επέκτασης $K/\Q$ και θέτουμε $G=\Gal(K/\Q)$. Έχουμε από το θεώρημα \tl{Kronecker-Weber} ότι $K\subseteq \Q(\zeta_n)$ 
+για κάποιο $n$. Επιπλέον, ο ομαδοδακτύλιος $\Z[G]$ δρα με φυσιολογικό τρόπο στο $C$. Έστω $x = \sum x_{\sigma}\sigma \in \Z[G]$ και $\mathfrak{a}$ ένα κλασματικό ιδεώδες του $K$. Τότε η δράση δίνεται από:
+
+$$x \cdot \mathfrak{a} = \mathfrak{a}^x = \prod\limits_{\sigma} (\sigma \mathfrak{a})^{x_\sigma}$$ Έστω τώρα $A$ να είναι η $p$-\tl{Sylow} υποομάδα της ομάδας κλάσεων $C$. Επάγεται μια δράση του $\Z_p[G]$ στο $A$ ως εξής:
+
+$$\left( \sum\limits_{j=0}^\infty a_j p^j \right) \cdot \mathfrak{a} = \prod\limits_{j=1}^\infty (\mathfrak{a}^{a_jp^j})$$ καθώς ισχύει ότι $p^m A = 0$ για αρκετά μεγάλο $m$. Για έναν πραγματικό αριθμό $x$ θα συμβολίζουμε με $\{x\}$ το μη ακέραιο μέρος του, δηλαδή $x-\{x\} \in \mathbb{Z}$ και $0\leq \{x\} < 1$.
+
+\begin{defn}
+	Το στοιχείο \tl{Stickelberger} του $K$ ορίζεται ως
+	$$\theta = \theta(K) = \sum\limits_{\substack{a(\operatorname{mod}n) \\ \gcd(a,n)=1 }} \left\{\frac{a}{n}\right\} \sigma_a^{-1} \in \mathbb{Q}[G]$$ όπου $\sigma_a$ είναι το στοιχείο της ομάδας $\Gal(\Q(\zeta_n)/\Q)$ που δίνεται από την σχέση $\zeta_n \mapsto \zeta_n^a$ περιορισμένο στο $K$. Το ιδεώδες \tl{Stickelberger} $I(K)$ του $K$ ορίζεται να είναι το $\Z[G]\cap \theta \Z[G]$. Με άλλα λόγια, είναι τα $\Z[G]$-πολλαπλάσια του $\theta$ που έχουν ακέραιους συντελεστές.
+\end{defn}
+
+\noindent Αναφέρουμε το θεώρημα του \tl{Stickelberger} το οποίο δεν θα αποδείξουμε. 
+Για την απόδειξη μπορεί να ανατρέξει κανείς στο \cite{Wash} στις σελίδες 96-100.
+
+\begin{theorem}[\tl{Stickelberger's Theorem}]
+	Το ιδεώδες \tl{Stickelberger} μηδενίζει την ομάδα κλάσεων ιδεωδών του $K$, δηλαδή αν $\mathfrak{a}$ είναι ένα κλασματικό ιδεώδες 
+	του $K$ και $b$ να ανήκει στο $ \Z[G]$ έτσι ώστε $b\theta \in \Z[G]$, τότε το $(b\theta)\cdot \mathfrak{a}$ είναι κύριο.
+\end{theorem}
+
+\noindent Υποθέτουμε τώρα ότι $K=\Q(\zeta_p)$ για $p$ έναν περιττό πρώτο. Έχουμε ότι $G^\wedge =\{ \omega^i: 0 \leq i \leq p-2\}$. Θα σταθούμε στον ομαδοδακτύλιο $\mathbb{Z}_p[G]$, όπου τα κεντρικά ταυτοδύναμα στοιχεία είναι:
+$$\varepsilon_i := \varepsilon_{\omega^i} = \frac{1}{p-1} \sum\limits_{a=1}^{p-1} \omega^i(a)\sigma_a^{-1}$$ για $0\leq i\leq p-2$ 
+και το στοιχείο \tl{Stickelberger} είναι το
+$$\theta = \frac1p \sum\limits_{a=1}^{p-1}a \sigma^{-1}_a$$ Παρατηρούμε ότι
+
+\begin{align*}
+	\varepsilon_i \theta &= \frac1p \sum\limits_{a=1}^{p-1}a\varepsilon_i \sigma^{-1}_a \\
+	&= \frac1p \sum\limits_{a=1}^{p-1}a\omega^i (\sigma^{-1}_a)\varepsilon_i \\
+	&= \frac1p \sum\limits_{a=1}^{p-1}a\omega^{-i}(a)\varepsilon_i \\ 
+	&= B_{1,\omega^{-i}}\varepsilon_i
+\end{align*}
+
+\noindent και όμοια για $c \in \Z$ έχουμε
+$$\varepsilon_i (c-\sigma_c)\theta = (c-\omega^i(c))B_{1,\omega^{-i}} \varepsilon_i$$
+
+\begin{prop}
+	Έστω $c \in \Z$ με $p\nmid c$. Τότε $(c-\sigma_c)\theta \in \Z[G]$.
+\end{prop}
+\begin{proof}
+	Παρατηρούμε ότι
+	$$(c-\sigma_c)\theta = \sum\limits_{a=1}^{p-1} c \left\{\frac{a}{p} \right\} \sigma^{-1}_a - \sum\limits_{a=1}^{p-1}\left\{\frac{a}{p}\right\} \sigma_c \sigma^{-1}_a$$
+	Είναι προφανές ότι $\sigma_c \sigma^{-1}_a = \sigma_{ca^{-1}}$, άρα αλλάζοντας την σειρά της άθροισης των στοιχείων της $G$ έχουμε
+	$$(c-\sigma_c)\theta = \sum\limits_{a=1}^{p-1}\left(c\left\{\frac{a}{p}\right\}-\left\{\frac{ac}{p}\right\}\right)\sigma^{-1}_a$$ και 
+	καθώς $\left\{\frac{a}{p}\right\} = \frac{a}{p}$, μαζί με το $x -\{x\} \in \Z$ έχουμε ότι $(c-\sigma_c)\theta \in \Z[g]$, όπως θέλαμε.
+\end{proof}
+
+\noindent Έστω $A$ η $p$-\tl{Sylow} υποομάδα της ομάδας κλάσεων του $\Q(\zeta_p)$. Όπως επισημάναμε προηγουμένως, το $A$ είναι $\Z_p[G]$-πρότυπο και άρα έχουμε την διάσπαση
+$$A = \bigoplus\limits_{i=0}^{p-2}A_i,$$
+όπου με $A_i$ θα γράφουμε το $\varepsilon_i A$. Το θεώρημα του \tl{Stickelberger} μαζί με την προηγούμενη πρόταση έχουν ως συνέπεια ότι 
+το $(c-\sigma_c)\theta$ θα μηδενίζει το $A$, άρα και κάθε $A_i$ όπου $p\nmid | c$. Ειδικότερα, έχουμε δείξει ότι το 
+$(c-\omega^i(c))B_{1,\omega^{-i}}$ μηδενίζει το $A_i$. Σημειώνουμε ότι για $i\neq 0$ άρτιο, το $B_{1,\omega^{-1}}$ είναι $0$, δηλαδή 
+δεν έχουμε δείξει κάτι καινούργιο. Για $i=0$ έχουμε ότι το $(c-1)/2$ μηδενίζει το $A_0$ για κάθε $c$ με $p\nmid c$. Άρα πρέπει να είναι 
+$A_0 = 0$. Τώρα θα ασχοληθούμε με την περίπτωση που το $i$ είναι περιττό. Αν $i\neq 1$, τότε υπάρχει $c$ ώστε 
+$c\not\equiv \omega^i(c)(\operatorname{mod}p)$ και άρα μπορούμε να αγνοήσουμε τον παράγοντα $(c-\omega^i(c))$ και να πάρουμε ότι 
+το $B_{1,\omega^{-i}}$ μηδενίζει το $A_i$. Αν $i=1$, θέτουμε $c=1+p$. Τότε 
+
+\begin{align*}
+	(c-\omega(c))B_{1,\omega^{-1}} &= pB_{1,\omega^{-1}} \\
+	&= \sum\limits_{a=1}^{p-1}a\omega^{-1}(a) \\ 
+	&= p-1 \not\equiv 0 (\operatorname{mod}p)
+\end{align*}
+και καθώς το $A_1$ είναι $p$-ομάδα, υποχρεωτικά έχουμε $A_1 = 0$. Άρα έχουμε αποδείξει την ακόλουθη πρόταση.
+
+\begin{prop}
+	Τα κομμάτια $A_0$ και $A_1$ της ομάδας κλάσεων είναι και τα δύο $0$ και για $i=3,5,\ldots,p-2$ έχουμε ότι το $B_{1,\omega^{-i}}$ μηδενίζει το $A_i$.
+\end{prop}
+
+\noindent Είμαστε πλέον σε θέση να αποδείξουμε το θεώρημα του \tl{Herbrand}. Να σημειώσουμε ότι είναι στην μια κατεύθυνση πιο ισχυρό 
+από το θεώρημα \ref{3.33}, όπου είχαμε αν $p|h_p$ τότε το $p$ διαιρεί κάποιον αριθμό \tl{Bernoulli}. Εδώ παίρνουμε ακριβώς ποιον αριθμό 
+\tl{Bernoulli}, που είναι αντίστοιχος με το ποιο κομμάτι της ομάδας κλάσεων είναι μη τετριμμένο. 
+
+\begin{theorem}[\tl{Herbrand's Theorem}]
+	Έστω $i$ περιττό με $3\leq i \leq p-2$. Αν $A_i \neq 0$, τότε $p|B_{p-i}$.
+\end{theorem}
+
+\begin{proof}
+	Έχουμε ότι το $B_{1,\omega^{-i}}$ μηδενίζει το μη τετριμμένο $A_i$ που είναι $p$-ομάδα, άρα έχουμε ότι $p|B_{1,\omega^{-i}}$. Ωστόσο, 
+	ισχύει επιπλέον ότι
+	$$B_{1,\omega^{-i}} \equiv \frac{B_{p-i}}{p-i} (\operatorname{mod}p)$$ και αυτές οι δύο ποσότητες είναι $p$-ακέραιες. Άρα πράγματι $p|B_{p-i}$.
+\end{proof}
+
+\begin{theorem}[\tl{Ribet}] Έστω $i$ περιττό με $3\leq i \leq p-2$. Αν $p|B_{p-i}$, τότε $A_i\neq 0$.
+\end{theorem}
+
+$ $\newline
+Ο \tl{Ribet} αποδεικνύει το αντίστροφο του θεωρήματος του \tl{Herbrand} κατασκευάζοντας στοιχεία μέσα στο $A_i$. Ωστόσο, παραλείπουμε την απόδειξη του καθώς αυτή η κατασκευή 
+βασίζεται σε τεχνικές από \tl{modular forms} και \tl{Galois} αναπαραστάσεων, ώστε να βρεθεί στοιχείο τάξης $p$ στο αντίστοιχο 
+κομμάτι της ομάδας κλάσεων. Αξίζει να σημειωθεί ότι αυτές τις τεχνικές ανέπτυξαν περεταίρω οι \tl{Mazur} και \tl{Wiles} στο \cite{MW}, για να αποδείξουν 
+την κύρια εικασία \tl{Iwasawa} πάνω από το $\Q$, στην οποία θα αναφερθούμε αργότερα. Θα κλείσουμε την ενότητα με την ακόλουθη γενίκευση του παρακάτω αποτελέσματος.
+$$p|h^+_p \implies p|h^-_p.$$ 
+
+\begin{theorem}
+	Έστω $i$ άρτιο και $j$ περιττό με $i+j \equiv 1 (\operatorname{mod}p-1)$. Τότε
+	$$p\operatorname{-rank}(A_i) \leq p\operatorname{-rank}(A_j) \leq 1+ p\operatorname{-rank}(A_i)$$
+	όπου το $p\operatorname{-rank}$ μιας πεπερασμένης αβελιανής ομάδας $G$ είναι η διάσταση του $G/pG$ ως $\mathbb{F}_p$-διανυσματικού χώρου.
+\end{theorem}
+
+$ $\newline
+Το γιατί είναι αυτό το αποτέλεσμα γενίκευση του $p|h_p^+ \implies p|h^-_p$ θα γίνει ξεκάθαρο στην συνέχεια. Υπενθυμίζουμε ότι ορίσαμε 
+το $h^+_p$ να είναι το μέγεθος της ομάδας κλάσεων του $\Q(\zeta_p)^+$. Δείξαμε ότι $h^+_p|h_p$ και ορίσαμε το $h^-_p = h_p/h^+_p$. 
+Θα δείξουμε τώρα ότι τα $h_p^+, h_p^-$ είναι μεγέθη των κομματιών της ομάδας κλάσεων του $\Q(\zeta_p)$. Όπως συνηθίζεται, 
+θα συμβολίζουμε τον μιγαδικό συζυγή $\sigma_{-1} \in \Gal(\Q(\zeta_p)/\Q)$ με $J$. Γράφουμε $C_p$ για την ομάδα κλάσεων του 
+$\Q(\zeta_p)$ και $C_{p^+}$ για την ομάδα κλάσεων του $\Q(\zeta_p)^+$.
+
+$ $\newline
+Έστω $C_p^-$ να είναι ο $(-1)$-ιδιόχωρος του $C_p$ ως προς την δράση του $J$, δηλαδή
+$$C_p^- = \{ \mathfrak{a} \in C_p: \ (1+J) \cdot \mathfrak{a} = 1 \}.$$
+
+\noindent Υπενθυμίζουμε από την θεωρία κλάσεων σωμάτων ότι αν έχουμε $H_{\Q(\zeta_p)^+}\cap \Q(\zeta_p) = \Q(\zeta_p)^+$, τότε η 
+απεικόνιση νόρμας $C_p \longrightarrow C_{p^+}$ είναι επί, όπου το $H_{\Q(\zeta_p)^+}$ είναι το \tl{Hilbert} σώμα κλάσης του 
+$\Q(\zeta_p)^+$. Ωστόσο, ξέρουμε ότι το $\Q(\zeta_p)$ είναι διακλαδιζόμενο πάνω από το $\Q(\zeta_p)^+$ στους αρχιμήδειους πρώτους, οπότε ικανοποιείται αυτή η συνθήκη. Παρατηρούμε ότι έχουμε την ακριβή ακολουθία:
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzcd}
+		1 \arrow[r] & C_p^- \arrow[r] & C_p \arrow[r, "\operatorname{Norm}"] & C_{p^+} \arrow[r] & 1
+		\end{tikzcd}
+\end{figure}
+
+\noindent Για να δει κανείς ότι το $C_p^-$ είναι ακριβώς ο πυρήνας της απεικόνισης νόρμας μπορεί να ανατρέξει στην σελίδα 63 του \cite{Milne1} για τις ιδιότητες της απεικόνισης νόρμας, σε συνδυασμό με το γεγονός ότι $\Gal(\Q(\zeta_p)/\Q(\zeta_p)^+) \simeq \{1,J\}$. Συνεπώς, βλέπουμε ότι το $h_p^-$ είναι η τάξη του $C_p^-$, ενός κομματιού της ομάδας κλάσεων του $\Q(\zeta_p)$.
+
+$ $\newline
+Καθώς χρειάζεται να κοιτάμε μόνο την $p$-διαιρετότητα στο παραπάνω θεώρημα, θα περιοριστούμε να δουλεύουμε στο $p$-μέρος της ομάδας 
+κλάσεων. Θέτουμε $\varepsilon_{-} = \frac{1-J}{2}$ και $\varepsilon_+ = \frac{1+J}2$. Με έναν γρήγορο υπολογισμό φαίνεται ότι 
+o $(-1)$-ιδιόχωρος της δράσης του $J$ στο $A$ είναι ακριβώς το $\varepsilon_- A$. Άρα θα γράφουμε 
+$A^- =\varepsilon_- A$ και $A^+ = \varepsilon_+ A$. Έχουμε ότι $A = A^- \oplus A^+$. Έτσι, το παραπάνω αποτέλσμα δείχνει 
+ακριβώς ότι το $A^+$ είναι ακριβώς το $p$-μέρος του $C_{p^+}$ όπως θέλαμε. Μπορεί να δειχτεί ότι
+$$\varepsilon_+ = \sum\limits_{i \text{ άρτιο}}\varepsilon_i$$ και  
+$$\varepsilon_- = \sum\limits_{i \text{ περιττό}}\varepsilon_i$$ δηλαδή
+$$A^- = A_1 \oplus A_3 \oplus\cdots \oplus A_{p-2}$$ και 
+$$A^+ = A_0 \oplus A_2 \oplus\cdots \oplus A_{p-3},$$ όπου τώρα φαίνεται ξεκάθαρα ότι το παραπάνω θεώρημα γενικεύει την πρόταση $p|h^+_p \implies p|h_p^-$.
+
+

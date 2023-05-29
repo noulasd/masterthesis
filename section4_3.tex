@@ -1,0 +1,550 @@
+\section{Θεώρημα \tl{Iwasawa}}
+
+Σε αυτή την ενότητα θα αποδείξουμε το θεώρημα \ref{theorem4.1} του \tl{Iwasawa}. Θα βασιστούμε πολύ στο θεώρημα δομής που 
+αποδείχτηκε προηγουμένως. Έστω $K$ ένα σώμα αριθμών και $K_\infty/K$ μια $\Z_p$-επέκταση με $K=K_0 \subset K_1 \subset \cdots \subset 
+K_{\infty}$ με $\Gal(K_n/K) \cong \Z/p^n \Z$. Γράφουμε ως $\Gamma = \Gal(K_{\infty}/K)$ και έστω $\gamma_0$ ένας τοπολογικός γεννήτορας 
+του $\Gamma$, δηλαδή η υποομάδα που παράγει το $\gamma_0$ να είναι πυκνή. Έχουμε ότι υπάρχει τέτοιος γεννήτορας καθώς με την ίδια 
+έννοια το $1$ είναι πυκνό στο $\Z_p$ που είναι ισόμορφο με το $\Gamma$. Ο ισομορφισμός $\Z_p \cong \Gamma$ δίνεται την απεικόνιση $x\longmapsto \gamma_0^x$. 
+
+Υπενθυμίζουμε ότι από την θεωρία κλάσεων σωμάτων έχουμε την ύπαρξη της μεγιστικής αδιακλάδιστης αβελιανής επέκτασης $H_K/K$ με τον ισομορφισμό πεπερασμένων ομάδων:
+$$\Gal(H_K/K) \cong C_K,$$ όπου $C_K$ είναι η ομάδα κλάσεων ιδεωδών του $K$. Αν $P$ είναι η $p$-\tl{Sylow} υποομάδα της $\Gal(H_K/K)$, η 
+δεύτερη ως αβελιανή θα είναι μηδενοδύναμη και άρα ευθύ γινόμενο των \tl{Sylow} $q$-υποομάδων $Q$ για τους υπόλοιπους πρώτους $q\neq p$ 
+που διαιρούν την τάξη του $C_K$. Από την θεωρία \tl{Galois} έχουμε ότι:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        1                              & 1                                           & H_K                              \\
+        P \arrow[u, "p^n"', no head]   & \prod\limits_{Q\neq P} Q \arrow[u, no head] & H_K^{\prod Q} \arrow[u, no head] \\
+        \Gal(H_K/K) \arrow[u, no head] & \Gal(H_K/K) \arrow[u, "p^n"', no head]      & K \arrow[u, "p^n"', no head]    
+        \end{tikzcd}
+\end{figure} 
+
+\noindent Δηλαδή για το $K$ έχουμε την ύπαρξη της μέγιστης αδιακλάδιστης αβελιανής $p$-επέκτασης $H_K^{\prod Q}$. Έστω $L_n$ να είναι η μέγιστη αδιακλάδιστη αβελιανή $p$-επέκταση του $K_n$. Έχουμε 
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        H_{K_n}                        & 1                                            \\
+        L_n \arrow[u, no head]         & \Gal(H_{K_n}/L_n) \arrow[u, no head]         \\
+        K_n \arrow[u, "p^n"', no head] & \Gal(H_{K_n}/K_n) \arrow[u, "p^n"', no head]
+        \end{tikzcd}
+\end{figure}
+\noindent και
+$$\Gal(H_{K_n}/K_n)/\Gal(H_{K_n}/L_n) \cong \Gal(L_n/K_n)$$
+
+\noindent Θέτουμε $X_n = \Gal(L_n/K_n)$ έτσι ώστε από τα παραπάνω το $X_n$ να είναι η $p$-\tl{Sylow} υποομάδα της ομάδας κλάσεων του $K_n$. Αυτό που μας ενδιαφέρει για το θεώρημα του \tl{Iwasawa} είναι η δύναμη του $p$ που διαιρεί το $X_n$. Έστω $L=\cup_{n\geq 0} L_n, \ X = \Gal(L/K_{\infty})$ και $G = \Gal(L/K)$. Έχουμε το ακόλουθο διάγραμμα σωμάτων με τις αντίστοιχες ομάδες \tl{Galois}:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        &  & L \arrow[llddd, "G", no head] \\
+K_\infty \arrow[dd, "\Gamma"', no head] \arrow[rru, "X", no head] &  &                               \\
+        &  &                               \\
+K                                                                 &  &                              
+\end{tikzcd}
+\end{figure}
+
+\noindent Παρατηρούμε ότι για οποιοδήποτε $n\geq 0$ η επέκταση $K_\infty /K_n$ παραμένει μια $\Z_p$-επέκταση με το ίδιο $X$ όπως στην 
+περίπτωση του $K$, εφόσον τα $K_m$ αποτελούν αύξουσα ακολουθία και καθώς $L_m \supset K_m$, θα έχουμε ότι $L = \cup_{m\geq 0} 
+L_m = \cup_{m\geq n} L_n$. Αυτό θα είναι σημαντικό καθώς θέλουμε να εργαστούμε στην περίπτωση που κάθε πρώτος που διακλαδίζεται στην 
+$K_\infty$ να διακλαδίζεται πλήρως. Θα το πετύχουμε αυτό αντικαθιστώντας το $K$ με το $K_n$ για κάποιο $n$. Καθώς θα πάρουμε 
+αποτελέσματα για το ((νέο)) $X$ είναι σημαντικό που θα ξέρουμε ότι στην πραγματικότητα παραμένει το ίδιο που μας ενδιαφέρει. 
+
+\begin{lemma} Οι ομάδες διάσπασης και αδράνειας για ομάδα $\Gal(L/K)$ είναι κλειστές ως προς την τοπολογία \tl{Krull}.
+\end{lemma}
+\begin{proof} Έστω $D_{\lambda}  = \{ \sigma \in \Gal(L/K): \ \sigma (\lambda) \equiv \lambda \}$ για έναν πρώτο $\lambda$. Έστω $\sigma \in \overline{D}_{\lambda}$. Τότε το $D_{\lambda}$ τέμνει τις ανοιχτές περιοχές $\sigma \Gal(L/M)$ για κάθε πεπερασμένη υποεπέκταση $M/K$. Διαλέγουμε $\sigma_M \in D_{\lambda}$ με $\sigma_M = \sigma \tau$ για κάποιο $\tau \in \Gal(L/M)$. Τότε
+    $$\sigma_M |_M = (\sigma \tau)|_M = \sigma|_{\tau(M)} \circ \tau|_M = \sigma|_M \circ id_M = \sigma|_M.$$
+    Καθώς $\sigma_M(\lambda)\equiv \lambda$, έχουμε $\sigma|_M (\lambda) \equiv \lambda$ και άρα
+    $$\sigma|_M(\lambda \cap M) = \sigma_M(\lambda\cap M) = \lambda \cap M.$$
+    Το $L$ είναι η ένωση όλων των $M$, συνεπώς για ένα $a \in \lambda$ έχουμε
+    $$\sigma(a) = \sigma|_{K(a)}(a) \in \lambda \cap K(a) \subseteq \lambda ,$$
+    δηλαδή $\sigma (\lambda)\equiv \lambda$ και άρα $\sigma \in D_{\lambda}$ οπότε δείξαμε ότι η $D_{\lambda}$ είναι κλειστή. Όμοιο είναι το επιχείρημα για αρχιμήδειους πρώτους και αντίστοιχα για την ομάδα αδράνειας.
+\end{proof}
+
+
+\noindent Υπενθυμίζουμε ότι για μια άπειρη \tl{Galois} επέκταση $M/N$ λέμε ότι ένας πρώτος $\p$ του $N$ διακλαδίζεται πλήρως αν υπάρχει μοναδικός πρώτος $\q$ του $M$ έτσι ώστε $I_{\q} = I_{\q | \p} = \Gal(M/N)$. Αυτό είναι ισοδύναμο ότι ο $\p$ είναι πλήρως διακλαδιζόμενος με την συνήθη έννοια σε κάθε πεπερασμένη \tl{Galois} υποεπέκταση $F/N$. Πράγματι, αν $I_\q = \Gal(M/N)$ τότε έχουμε τον φυσιολογικό επιμορφισμό:
+$$\Gal(M/N) \longrightarrow \Gal(F/N)$$
+$$\sigma \longmapsto \sigma|_F$$ και η εικόνα του $I_\q$ είναι η $I(\q \cap F | \p)$. Λόγω της υπόθεσης και του επιμορφισμού παίρνουμε ότι $|I_{\q\cap F}| = |\Gal(F/N)| = [F:N]$ άρα ο $\p$ διακλαδίζεται πλήρως στο $F$. Για το αντίστροφο, παρατηρούμε αρχικά ότι μπορούμε να περιορίσουμε σε οποιαδήποτε πεπερασμένη υποεπέκταση $F/N$. Εφόσον η κάθε πεπερασμένη υποεπέκταση περιέχεται σε μια πεπερασμένη \tl{Galois} $F^\prime/N$, στην οποία ο $\p$ θα διακλαδίζεται πλήρως με  τον πρώτο $\q^\prime$ να στέκεται από πάνω. Αρα κοιτάμε τον πρώτο  $\q^\prime \cap F $, δηλαδή για κάθε $F/N$ υποεπέκταση
+έχουμε έναν πρώτο $\q_F$ τέτοιο ώστε:
+$$\p \mathcal{O}_F = \q_F^{[F:N]}$$
+άρα, $I(\q_F | \p) = \Gal(F/N)$. Θέτουμε ως $\q := \bigcup\limits_F \q_F$ ο οποίος έιναι ο μοναδικός πρώτος του $M$ που στέκεται πάνω από το $\q_F$. Έχουμε τον φυσιολογικό τοπολογικό ισομορφισμό ομάδων:
+
+$$I(\q | \p) \longrightarrow \varprojlim I(\q_F | \p)$$
+$$\sigma \longmapsto (\sigma|_{F_i})_i $$
+και από την υπόθεση ότι $I(\q_F | \p) = \Gal(F/N)$ μαζί με το γεγονός ότι $\varprojlim \Gal(F/N) \cong \Gal(M/N)$ και την μοναδικότητα του αντιστρόφου ορίου ως προς ισομορφισμό, παίρνουμε ότι $\Gal(M/N) = I(\q | \p)$. Μπορούμε λοιπόν να χειριστούμε τώρα τους πλήρως διακλαδιζόμενους πρώτους στην επέκταση $K_\infty/K$ όπως γίνεται στις παρακάτω προτάσεις.
+
+\begin{prop}
+    Κάθε $\Z_p$-επέκταση είναι αδιακλάδιστη έξω από το $p$, δηλαδή αν $\lambda$ είναι ένας πρώτος του $K$ που δεν στέκεται πάνω από το $p$, τότε η επέκταση $K_{\infty}/K$ είναι αδιακλάδιστη στο $\lambda$.
+
+\end{prop}
+\begin{proof}
+    Έστω $I_{\lambda}$ να είναι η ομάδα αδράνειας του $\lambda$. Η ομάδα αδράνειας είναι κλειστή, άρα ως προς τον ισομορφισμό με το $\Z_p$ 
+    έχουμε ότι $I_\lambda = 0$ ή $p^n \Z_p$ για κάποιο $n$. Αν $I_\lambda = 0$ δεν έχουμε κάτι να δείξουμε. Έστω ότι $I_\lambda = p^n Z_p$ για κάποιο $n$. Η ομάδα αδράνειας ενός αρχιμήδειου πρώτου έχει τάξη 1 ή 2, ενώ εδώ έχουμε άπειρη τάξη άρα αποκλείουμε την περίπτωση το $\lambda$ να είναι ένας διακλαδιζόμενος αρχιμήδειος πρώτος. Για κάθε $m$ διαλέγουμε μια θέση $\lambda_m$ έτσι ώστε το $\lambda_m$ να στέκεται πάνω από το $\lambda_{m-1}$ και θέτουμε για βάση $\lambda_0 = \lambda$. Θεωρούμε την πλήρωση του κάθε σώματος $K_m$ ως προς το $\lambda_m$ και παίρνουμε έναν πύργο σωμάτων:
+    $$K_\lambda = K_{0,\lambda} \subset K_{1,\lambda_1} \subset K_{2,\lambda_2} \subset \cdots $$ όπου θέτουμε
+    $$\hat{K}_\infty = \bigcup\limits_{m\geq 0}K_{m,\lambda_m}.$$
+    
+    \noindent Παρατηρούμε ότι $I_\lambda \subset \Gal(\hat{K}_\infty/ K_\lambda)$. Έστω $U$ οι μονάδες του $K_\lambda$. Από την τοπική 
+    θεωρία κλάσεων σωμάτων \cite{Milne2} γνωρίζουμε ότι υπάρχει επιμορφισμός $U\rightarrow I_\lambda$, δηλαδή επιμορφισμός 
+    $U\rightarrow p^n Z_p$. Ωστόσο, από το θεώρημα μονάδων της αλγεβρικής θεωρίας αριθμών έχουμε ότι το $U$ είναι ισομορφο με το ευθύ γινόμενο μιας πεπερασμένης ομάδας επί του $\Z_{\ell}^a$ για κάποιο $a \in \Z$ και πρώτο $\ell \subset \Z$ με $\lambda \mid \ell$. Ξέρουμε ότι το $p^n \Z_p$ δεν έχει στρέψη, άρα έχουμε έναν συνεχή επιμορφισμό $\Z_{\ell}^a \rightarrow p^n Z_p$. Συνδυάζοντάς το με την φυσική προβολή παίρνουμε έναν συνεχή επιμορφισμό:
+    $$\Z_{\ell}^a \longrightarrow p^n \Z_p / p^{n+1}\Z_p$$
+    Το οποίο σημαίνει ότι έχουμε κλειστό υποσύνολο με δείκτη $p$ στο $\Z_{\ell}^a$, το οποίο είναι άτοπο. Άρα $I_{\lambda}=0$.
+\end{proof}
+
+\begin{prop} \label{prop4.18}
+    Τουλάχιστον ένας πρώτος διακλαδίζεται στην επέκταση $K_\infty/K$ και υπάρχει $m\geq 0$ τέτοιο ώστε κάθε πρώτος που διακλαδίζεται στην επέκταση $K_\infty/K_m$ να διακλαδίζεται πλήρως.
+\end{prop}
+\begin{proof}
+    Η μέγιστη αδιακλάδιστη επέκταση όπως γνωρίζουμε είναι πεπερασμένη ενώ η $K_\infty/K$ είναι άπειρη, άρα τουλάχιστον ένας πρώτος θα διακλαδίζεται. Από την προηγούμενη πρόταση μόνο οι πρώτοι πάνω από το $p$ είναι πιθανό να διακλαδίζονται. Έστω ότι αυτοί οι πρώτοι είναι οι $\mathfrak{p}_1,\ldots, \mathfrak{p}_r$ με τις αντίστοιχες ομάδες αδράνειας $I_1,\ldots,I_r$. Εφόσον κάθε $I_i$ είναι κλειστό, ισχύει το ίδιο για το $\cap I_i$. Συνεπώς, υπάρχει ένα $m\in \Z$ τέτοιο ώστε 
+    $$\bigcap I_i = p^m \Z_p .$$
+    Έχουμε ότι $\Gal(K_m/K)\cong \Z/p^m \Z \cong \Z_p/p^m \Z_p$, άρα έχουμε ότι $\Gal(K_\infty/K_m) \cong p^m \Z_p$ και άρα περιέχεται στο $I_i$ για κάθε $i=1,\ldots,r$. Συνεπώς, δείξαμε ότι τα $\mathfrak{p}_i$ είναι πλήρως διακλαδιζόμενα στην επέκταση $K_\infty/K_m$ για κάθε $i=1,\ldots,r$. 
+    
+\end{proof}
+
+    \noindent Σταθεροποιούμε τώρα ένα $m$ όπως είναι στην πρόταση \ref{prop4.18}.
+
+    \begin{prop}
+        Για κάθε $n\geq m$ έχουμε ότι $K_{n+1}\cap L_n = K_n$.
+    \end{prop}
+
+    \begin{proof}
+                Έχουμε ότι $K_n \subseteq L_n \cap K_{n+1}$ άρα αρκεί να δείξουμε ότι η ομάδα $\Gal(L_n \cap K_{n+1} / K_n)$ είναι τετριμμένη. Έχουμε τον φυσιολογικό επιμορφισμό:
+                $$\Gal(K_{\infty}/K_n) \longrightarrow \Gal(K_{n+1}\cap L_n / K_n)$$
+                $$\sigma \longmapsto \sigma|_{K_{n+1}\cap L_n}$$
+                και ξέρουμε ότι υπάρχει πρώτος $\p$ που διακλαδίζεται στην επέκταση $K_\infty/K_n$. Καθώς $n\geq m$ αυτός θα διακλαδίζεται πλήρως με έναν μοναδικό πρώτο $\q$ να στέκεται από πάνω του. Έχουμε ότι $I_\q = \Gal(K_\infty/K_n)$ και η εικόνα του στον επιμορφισμό είναι η $I(\q\cap K_{n+1}\cap L_n | \p) = \Gal(K_{n+1}\cap L_n/ K_n)$. Ωστόσο, ο νέος πρώτος $\q\cap K_{n+1}\cap L_n$ βρίσκεται μέσα στην αδιακλάδιστη επέκταση $L_n/K_n$, άρα $I_{\q \cap K_{n+1} \cap L_n} = 1$.
+    \end{proof}
+
+    \noindent Προς το παρόν θα θεωρήσουμε ότι $m=0$. Όπως θα δούμε στην συνέχεια θα μπορούμε να δουλέψουμε και χωρίς αυτήν την υπόθεση, αλλά μέχρι τότε θα μας ευκολύνει στον συμβολισμό. Αυτή η υπόθεση θα ισχύει για τα επόμενα λήμματα μέχρι να αναφέρουμε διαφορετικά. Από την προηγούμενη πρόταση έχουμε τον ισομορφισμό $\Gal(L_nK_{n+1}/K_{n+1}) \cong \Gal(L_n/K_n), \ \sigma \mapsto \sigma|_{L_n}$ με το διάγραμμα σωμάτων:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            & L_n K_{n+1}                                              &                             \\
+L_n \arrow[ru, no head] &                                                          & K_{n+1} \arrow[lu, no head] \\
+            & L_n \cap K_{n+1} \arrow[lu, no head] \arrow[ru, no head] &                            
+\end{tikzcd}
+    \end{figure}
+
+    \noindent Καθώς έχουμε ότι $X_{n+1} = \Gal(L_{n+1}/K_{n+1}) $ και $L_n K_{n+1} \subset L_{n+1}$, βλέπουμε ότι η ομάδα 
+    $\Gal(L_nK_{n+1}/K_{n+1})$ και άρα το $X_n$ είναι πηλίκο του $X_{n+1}$. Συνεπώς, έχουμε έναν επιμορφισμό $X_{n+1} \rightarrow X_n$. Όμοια, αν πάρουμε το $K_\infty$ αντί για το $K_n$ παραπάνω έχουμε ότι
+$$X_n = \Gal(L_n/K_n) \cong \Gal(L_n K_\infty/K_\infty)$$ και άρα έχουμε
+\begin{align*}
+    \varprojlim X_n &= \varprojlim \Gal(L_n/K_n) \\
+    &\cong \varprojlim \Gal(L_n K_\infty/K_\infty) \\
+    &\cong \Gal \left( \bigcup\left(L_n K_\infty\right)/K_\infty \right) \\
+    &= \Gal(L/K_\infty) \\
+    &= X.
+\end{align*}
+
+\noindent Δείξαμε ότι το $X$ είναι το αντίστροφο όριο των ομάδων $X_n$. Επιπλέον, θέτουμε $\Gamma_n := \Gamma/\Gamma^{p^n} \cong \Z/p^n \Z \cong \Gal(K_n/K)$, όπου η δομή στο $\Gamma_n$ είναι πολλαπλασιαστική. Έστω $\gamma_n \in \Gamma_n$. Επεκτείνουμε το $\gamma_n$ σε ένα στοιχείο $\tilde{\gamma}_n \in \Gal(L_n/K)$. Έστω $x_n \in X_n$. Τότε υπάρχει δράση του $\gamma_n$ στο $x_n$ που δίνεται από την παρακάτω σχέση
+$$\gamma_n \cdot x_n = \tilde{\gamma}_n x_n \tilde{\gamma}_n^{-1}.$$
+
+\noindent Ωστόσο, πρέπει να δείξουμε ότι η δράση είναι καλά ορισμένη. Αρχικά, έχουμε την ακριβή ακολουθία:
+\begin{figure}[H]
+    \centering
+\begin{tikzcd}
+    0  \arrow[r] & \Gal(L_n/K_n) \arrow[r, "i", hook] & \Gal(L_n/K) \arrow[r, "p"] & \Gal(K_n/K) \arrow[r] & 0
+    \end{tikzcd}
+\end{figure}
+
+\noindent δηλαδή
+$$\Gal(L_n/K)/X_n \cong \Gamma_n .$$
+
+\noindent Άρα για να ανυψώσουμε ένα $\gamma_n$ σε ένα στοιχείο $\tilde{\gamma}_n$ της $\Gal(L_n/K)$ σημαίνει ότι διαλέγουμε αυτό το στοιχείο ως αντιπρόσωπο της κλάσης $\gamma_n = \tilde{\gamma}_n X_n$. Αν έχουμε $\gamma_n = \tilde{\gamma}_n X_n = \hat{\gamma_n}X_n$ τότε $\tilde{\gamma}^{-1}_n \hat{\gamma}_n \in X_n$. Καθώς η $X_n$ είναι αβελιανή έχουμε 
+\begin{align*}
+    \tilde{\gamma}_n x_n \tilde{\gamma}_n^{-1} & = \tilde{\gamma}_n \left( \tilde{\gamma}_n^{-1} \hat{\gamma}_n\right) \left(\tilde{\gamma}_n^{-1} \hat{\gamma}_n\right)^{-1} x_n \tilde{\gamma}_n\\
+    & = \tilde{\gamma}_n \left( \tilde{\gamma}_n^{-1} \hat{\gamma}_n\right) x_n \left(\tilde{\gamma}_n^{-1} \hat{\gamma}_n\right)^{-1} \tilde{\gamma}_n \\
+    & = \hat{\gamma}_n x_n \hat{\gamma}_n^{-1}.
+\end{align*} 
+Άρα πράγματι η δράση είναι καλά ορισμένη. Επιπλέον, έχουμε ότι το $X_n$ ως $p$-ομάδα είναι ένα $\Z_p$-πρότυπο με φυσιολογικό τρόπο. Έστω $|X_n|=p^{e_n}$, τότε ένα $y = \sum_{i=0}^\infty a_i p^i \in \Z_p$ θα δρα ως εξής.
+
+$$y \cdot x_n = \left(\sum\limits_{i=0}^{e_n-1} a_i p^i \right) \cdot x_n,$$
+
+
+%έχουμε ότι η προσθετική ομάδα $\Z_p$ δρα σε κάθε $p$-ομάδα, άρα και στο $X_n$. Πράγματι, έστω $P$ μια $p$-ομάδα με τάξη $p^n$. Αν σταθεροποιήσουμε ένα $f \in S_P$, όπου $S_P$ είναι η ομάδα συμμετριών του $P$, τότε η $\Z_p$ δρα μέσω της προβολής:
+%$$\pi : \Z_p \longrightarrow \Z_p/p^n \Z_p \cong \Z/p^n \Z $$
+%$$\Z_p \times P \longrightarrow P$$
+%$$(x,g) \longmapsto f^{\pi(x)}(g)$$
+%(πρόβλημα με το καλά ορισμένο, $x \mapsto f^{\pi(x)}$ εξαρτάται από αντιπρόσωπο, ίσως διαλέγω $f$ με τάξη $p$ καθώς $|S_P|=p^n!$, συμβατότητα μετά?)
+
+
+\noindent εφόσον οι όροι από το $p^{e_n} x_n$ και μετά θα είναι όλοι $0$. Άρα με βάση τα προηγούμενα το $X_n$ είναι ένα $\Z_p[\Gamma_n]$-πρότυπο. Για να προχωρήσουμε παρακάτω είναι ιδιαίτερα σημαντικός ο χαρακτηρισμός της άλγεβρας \tl{Iwasawa} ως πλήρωση ομαδοδακτυλίων.
+
+\begin{theorem}
+    $$\Lambda = \Z_p[[T]] \cong \varprojlim \Z_p[\Gamma_n] = : \Z_p [[\Gamma]]$$ με την αντιστοιχία να είναι
+    $$ T \longleftrightarrow (\gamma_n -1 )_n,$$ δηλαδή αντιστοιχούμε έναν τοπολογικό γεννήτορα $\gamma_0 \longleftrightarrow (\gamma_n)_n$ στο $1+T$. 
+\end{theorem}
+%completed group ring https://math.stackexchange.com/questions/4520798/p-adic-completed-group-ring-of-mathbbz-l
+
+%https://math.stackexchange.com/questions/879697/basic-iwasawa-theory-question
+\begin{proof}
+    Αρχικά, έχουμε ότι
+    $$\Gamma = \Gal(K_\infty/K) \cong \varprojlim \Gal(K_\infty /K)/\Gal( K_\infty /K_n) \cong \varprojlim \Gal(K_n/K) \cong \varprojlim \Gamma_n .$$ %και άρα, αφού τα $\Gamma_n$ είναι τα πηλίκα του $\Gamma$ όπως τα έχουμε ορίσει, μπορούμε να μιλάμε για τον πλήρη 
+   % $$\Z_p[[\Gamma]] \cong \varprojlim \Z_p[\Gamma_n].$$
+    %https://mathoverflow.net/questions/82676/inverse-limits-of-group-algebras-and-profinite-groups
+    \noindent Αν κοιτάξουμε τώρα σε πεπερασμένο επίπεδο, καθώς $\Gamma_n \cong \Gal(K_n/K)\cong \Z/p^n \Z$ έχουμε ότι για έναν γεννήτορα $\gamma_n \in \Gamma_n$ ισχύει ότι $\gamma_n^{p^n} = 1$. Άρα απλά στέλνοντας το $\gamma_n$ σε ένα $U$ έχουμε τον ισομορφισμό
+    $$\Z_p[\Gamma_n] \cong \frac{\Z_p[U]}{(U^{p^n}-1)}.$$ Ωστόσο αυτός ο ισομορφισμός δεν είναι συμβατός με το αντίστροφο σύστημα που φτιάχνουν τα $\Z_p[\Gamma_n]$. Για να το διορθώσουμε αυτό κάνουμε την αλλαγή μεταβλητής $U=T+1$. Έτσι έχουμε
+    $$\Z_p[\Gamma_n] \cong \frac{\Z_p[T]}{\left((1+T)^{p^n}-1\right)}$$ και παρατηρούμε ότι το $h_n = (1+T)^{p^n}-1$ είναι \tl{distinguished} πολυώνυμο. Επιπλέον, γνωρίζουμε ότι το $\Z_p[[T]]$ είναι η $(p,T)$-αδική πλήρωση του $\Z_p[T]$, δηλαδή
+    $$\Z_p[[T]] \cong \varprojlim \frac{\Z_p[T]}{(p,T)^n}.$$
+
+    \noindent Έχουμε ότι
+    $$\varprojlim \frac{\Z_p[[T]]}{(h_n)} \cong \Z_p[[T]]$$
+    καθώς 
+    \begin{align*}
+        h_{n+1} & = (1+T)^{p^{n+1}} - 1 \\
+        & = \left((1+T)^{p^n} -1 + 1\right)^p - 1 \\
+        & = (h_n+1)^p - 1 \\
+        &= h^p_n + ph_n^{p-1} + \cdots + ph_n .
+    \end{align*}
+    \noindent Άρα επαγωγικά βλέπουμε ότι το $h_{n+1}$ βρίσκεται στο ιδεώδες $(p,T)^{n+1}$. Επιπλέον, έχουμε
+    $$\frac{\Z_p[[T]]}{(h_n)} \cong \frac{\Z_p[T]}{(h_n)} \cong \Z_p[\Gamma_n]$$ καθώς το $h_n$ είναι \tl{distinguished} και μπορούμε σε ένα $f \in \Z_p[[T]]$ να εφαρμόσουμε τον αλγόριθμο διαίρεσης. Έχοντας ότι τα $h_n$ είναι συμβατά ως προς το αντίστροφο όριο, συνδυάζοντας τα παραπάνω έπεται το θεώρημα.
+\end{proof}
+
+\noindent Καθώς $X\cong \varprojlim X_n$ και $\Lambda \cong \varprojlim \Z_p[\Gamma_n]$, μπορούμε να γράφουμε τα στοιχεία του $X$ ως 
+$(x_0,x_1,\ldots,x_n,\ldots)$ με $x_i \in X_i$ και το $\Lambda$ να δρα στο $X$ ((κατά συντεταγμένη)), έτσι ώστε το $X$ να γίνεται ένα 
+$\Lambda$-πρότυπο. Όμοια με πριν, ορίζουμε
+$$\gamma \cdot x = \tilde{\gamma} x \tilde{\gamma}^{-1},$$ όπου $\tilde{\gamma}$ είναι μια επέκταση του $\gamma$ στο $\Gal(L/K_m)$, για το $m$ που σταθεροποιήσαμε προηγουμένως. Ωστόσο, εξακολουθούμε να είμαστε στην υπόθεση όπου $m=0$. Έχοντας $G/X \cong \Gamma$ και ότι η $X$ είναι αβελιανή ως αντίστροφο όριο αβελιανών ομάδων, με όμοιο επιχείρημα με πριν παίρνουμε ότι η παραπάνω δράση είναι καλά ορισμένη.
+
+
+Θεωρούμε ξανά τους $\p_1,\ldots,\p_s$ να είναι οι πρώτοι που διακλαδίζονται στην επέκταση $K_\infty/K$ και στέκονται αναγκαστικά πάνω από το $p$. Σταθεροποιούμε έναν πρώτο $\q_i$ του $L$ που στέκεται πάνω από το $\p_i$.
+Ως συνήθως, θεωρούμε $I_i = I(\q_i | \p_i) \subset G$ την ομάδα αδράνειας. Καθώς κάθε $L_n/K_n$ είναι αδιακλάδιστη, θα είναι αδιακλάδιστη και η επέκταση $L/K_\infty$ και άρα έχουμε $I_i \cap X = 1$. Συνεπώς έχουμε μια εμφύτευση
+$I_i \xhookrightarrow{} G/X \cong \Gamma$. Καθώς είμαστε στην υπόθεση όπου $m=0$, δηλαδή η επέκταση $K_\infty/K$ διακλαδίζεται πλήρως στο $\p_i$ και άρα $I_i = \Gamma$ έχουμε ότι αυτή η εμφύτευση είναι και επιμορφισμός. Άρα η $G$ είναι το ημιευθύ γινόμενο των $\Gamma, I_i$, οπότε έχουμε
+$$G = I_i X = X I_i$$ για κάθε $i=1,\ldots ,s$.
+Έστω $\sigma_i \in I_i$ να είναι το στοιχείο που απεικονίζεται στον τοπολογικό γεννήτορα $\gamma_0$ της $\Gamma$. Καθώς $G=XI_1$ έχουμε ότι $I_i\subseteq XI_1$ για τα $i=1,\ldots,s$. Συνεπώς, υπάρχει $a_i \in X$ τέτοιο ώστε
+$$\sigma_i = a_i \sigma_1$$
+
+\begin{lemma}
+    $$[G,G] = (\gamma_0 -1) \cdot X = TX.$$
+\end{lemma}
+
+\begin{proof}
+    Ταυτίζουμε το $\Gamma$ με το $I_1$ και ορίζουμε την δράση του $\Gamma$ στο $X$ μέσω αυτής της ταύτισης, δηλαδή
+    $$\gamma \cdot x = \gamma x \gamma^{-1}.$$
+    Έστω $g_1,g_2 \in G$. Καθώς $G=\Gamma X$ έχουμε στοιχεία $\gamma_1,\gamma_2 \in \Gamma$ και $x_1,x_2 \in X$ έτσι ώστε $g_1 = \gamma_1 x_1$ και $g_2 = \gamma_2 x_2$. Έχουμε 
+
+    \begin{align*}
+        g_1 g_2 g_1^{-1} g_2^{-1} & = \gamma_1 x_1 \gamma_2 x_2 x_1^{-1} \gamma_1^{-1} x_2^{-1} \gamma_2^{-1} \\ 
+        & = \left( \gamma_1 \cdot x_1\right) \gamma_1 \gamma_2 x_2 x_1^{-1} \gamma_1^{-1} x_2^{-1} \gamma_2^{-1} \\
+        &= \left( \gamma_1 \cdot x_1 \right) \left( (\gamma_1 \gamma_2) \cdot (x_2 x_1^{-1})\right) \left(\gamma_2 \cdot x_2^{-1}\right),
+    \end{align*} όπου χρησιμοποιήσαμε ότι η $\Gamma$ είναι αβελιανή. Επιπλέον, παρατηρούμε ότι
+
+    \begin{align*}
+        \left( (1-\gamma_2)\gamma_1 \cdot x_1\right) \left((\gamma_1 - 1) \gamma_2 \cdot x_2\right) &= \left((1-\gamma_2) \cdot \gamma_1 x_1 \gamma_1^{-1}\right) \left( (\gamma_1 - 1) \cdot \gamma_2 x_2 \gamma_2^{-1}\right) \\
+        &= \left( \gamma_1 x_1 \gamma_1^{-1}\right) \left(\gamma_2\gamma_1x_1^{-1}\gamma_1^{-1}\gamma_2^{-1}\right) \\ 
+        & \left(\gamma_1\gamma_2 x_2 \gamma_2^{-1} \gamma_1^{-1}\right) \left(\gamma_2x_2^{-1}\gamma_2^{-1}\right) \\
+        &= \left( \gamma_1 \cdot x_1 \right) \left( (\gamma_1 \gamma_2) \cdot (x_2 x_1^{-1})\right) \left(\gamma_2 \cdot x_2^{-1}\right),
+    \end{align*} όπου χρησιμοποιήσαμε ότι οι $\Gamma$ και $X$ είναι αβελιανές. Έχουμε
+    $$g_1g_2 g_1^{-1} g_2^{-1} = \left((1-\gamma_2) \gamma_1 \cdot x_1\right) \left((\gamma_1 -1)\gamma_2 \cdot x_2\right).$$
+
+    \noindent Ειδικότερα, αν θέσουμε $\gamma_2 = e$ και $\gamma_1 = \gamma_0$ θα έχουμε ότι $(\gamma_0 - 1) \cdot x_2 \in [G,G]$. Συνεπώς,
+
+    $$(\gamma_0 -1) \cdot X \subseteq [G,G].$$
+
+    \noindent Έστω τώρα $\gamma \in \Gamma$ να είναι τυχόν. Καθώς το $\gamma_0$ είναι τοπολογικός γεννήτορας, υπάρχει $c \in \Z_p$ έτσι ώστε $\gamma = \gamma_0^c$. Συνεπώς,
+
+    \begin{align*}
+        1-\gamma & = 1 - \gamma_0^c \\ 
+        &= 1- (1+T)^c \\
+        &= 1 - \sum\limits_{n=0}^\infty \binom{c}{n}T^n \in T\Lambda ,
+    \end{align*} όπου χρησιμοποιήσαμε ότι το $\gamma_0$ αντιστοιχεί στο $1+T$. Άρα έχουμε ότι
+    $$(1-\gamma_2) \gamma_1 \cdot x_1 \in (\gamma_0-1) \cdot X$$ και $$(1-\gamma_1)\gamma_2 \cdot x_2 \in (\gamma_0-1)\cdot X$$
+
+    \noindent Συνεπώς, έχουμε ότι $[G,G] \subseteq (\gamma_0 -1)\cdot X$.
+\end{proof}
+
+
+\noindent Για $n\geq 0$ θέτουμε 
+$$ \nu_n = 1 + \gamma_0 + \cdots + \gamma_0^{p^n-1}$$ και παρατηρούμε ότι 
+
+
+\begin{align*}
+    \nu_n &= \frac{\gamma_0^{p^n}-1}{\gamma_0 -1 } \\
+    &= \frac{(1+T)^{p^n}-1}{T}.
+\end{align*}
+
+\noindent Έστω $Y_0$ να ειναι το $\Z_p$-υποπρότυπο του $X$ που παράγεται από τα $\{a_i: 2 \leq i \leq s\}$ και το $TX$. Σημειώνουμε ότι δεν περιέχουμε το $a_1$. Θέτουμε $Y_n = \nu_n \cdot Y_0$. Έχουμε το ακόλουθο λήμμα που είναι ιδιαίτερα σημαντικό για την απόδειξη του θεωρήματος \tl{Iwasawa}, καθώς μπορεί να συσχετίζει πληροφορία μεταξύ του $X$ και των $X_n$.
+
+\begin{lemma}\label{lemma4.22}
+    Για $n\geq 0$ έχουμε
+    $$X_n \cong X/Y_n.$$
+\end{lemma}
+
+\begin{proof} Ξεκινάμε με την περίπτωση που $n=0$. Έχουμε $K\subset L_0 \subset L$ και ότι το $L_0$ είναι η μέγιστη αβελιανή αδιακλάδιστη $p$-επέκταση του $K$. Καθώς $L/K$ είναι επίσης $p$-επέκταση, με την έννοια ότι η $G$ είναι άπειρη $p$-ομάδα, ισχύει ότι η $L_0/K$ είναι η μέγιστη αβελιανή αδιακλάδιστη $p$-υποεπέκταση της $L/K$. Συνεπώς, έχουμε ότι η $\Gal(L/L_0)$ παράγεται από την $[G,G]$ και όλες τις ομάδες αδράνειας $I_i, i=1,\ldots, s$. Ειδικότερα, έχουμε ότι η $\Gal(L/L_0)$ είναι η κλειστή θήκη της υποομάδας που παράγεται από τα $(\gamma_0 \cdot X), I_1$ και $\{a_i: 2\leq i \leq s\}$. Συνεπώς, έχουμε
+    \begin{align*}
+        X_0 &= \Gal(L_0/K) \\
+        &= G/Gal(L/L_0) \\
+        &= XI_1 / \overline{\langle (\gamma_0-1)\cdot X, a_2,\ldots,a_s,I_1\rangle}\\
+        &\cong X/\overline{\langle (\gamma_0-1)\cdot X,a_2,\ldots,a_s\rangle} \\
+        &= X/Y_0 .
+    \end{align*} Άρα έχουμε το ζητούμενο για $n=0$. Έστω τώρα $n\geq 1$. Ουσιαστικά θα μεταφέρουμε την προηγούμενη απόδειξη στην γενική περίπτωση. Αντικαθιστούμε το $K$ με $K_0$ και άρα την θέση του $\gamma_0$ την παίρνει το 
+    $\gamma_0^{p^n}$, εφόσον $\Gal(K_\infty/K_n)\cong \Gamma^{p^n}$. Ειδικότερα, αυτό αλλάζει τα $\sigma_i$ σε $\sigma_i^{p^n}$. Έχουμε ότι
+    \begin{align*}
+        \sigma_i^{k+1} & = (a_i \sigma_1)^{k+1} \\
+        &= a_i \sigma_1 a_i \sigma_1^{-1} \sigma_1^2a_i\sigma_1^{-2} \cdots \sigma_1^k a_i \sigma_1^{-k} \sigma_1^{k+1} \\ 
+        &= (1+\sigma_1 + \cdots + \sigma_1^k) \cdot a_i \sigma_1^{k+1}.
+    \end{align*} Συνεπώς
+    $$\sigma_i^{p^n} = (\nu_n a_i) \cdot \sigma_1^{p^n}.$$ Αυτό μας δείχνει ότι πρέπει να αλλάξουμε στο παραπάνω επιχείρημα το $a_i $ με το $\nu_n \cdot a_i$. Είναι ξεκάθαρο ότι πρέπει να αλλάξουμε το $(\gamma_0-1)\cdot X$ με το $(\gamma_0^{p^n}-1)\cdot X = \nu_n(\gamma_0-1)\cdot X$. Ουσιαστικά, εδώ φαίνεται πώς θα έπρεπε να προχωρήσουμε σε μια γενική απόδειξη χωρίς την απλούστευση στην περίπτωση $n=0$. Οπότε, το $Y_0$ γίνεται $Y_n$ και τελειώνει η απόδειξη.
+\end{proof}
+
+\noindent Πριν προχωρήσουμε στο επόμενο λήμμα χρειαζόμαστε το γνωστό λήμμα του \tl{Nakayama}, την απόδειξη του οποίου μπορεί να βρει κανείς στην πρόταση 2.6 του \cite{AM}. Υπενθυμίζουμε ότι μια μορφή του λέει το εξής.
+
+\begin{lemma}[\tl{Nakayama's Lemma}]
+    \label{nakayama}
+    Έστω $R$ τυχόν δακτύλιος και και $M$ ένα πεπερασμένα παραγόμενο $R$-πρότυπο. Υποθέτουμε ότι ένα ιδεώδες $I$ του $R$ περιέχεται στο ιδεώδες \tl{Jacobson} του $R$. Τότε αν $IM = M$ έπεται ότι $M=0$.
+\end{lemma}
+
+
+\begin{lemma} Έστω $M$ ένα συμπαγές $\Lambda$-πρότυπο. Αν το $M/(p,T)M$ είναι πεπερασμένα παραγόμενο, τότε το $M$ είναι πεπερασμένα παραγόμενο $\Lambda$-πρότυπο. Ειδικότερα, αν το $M/(p,T)M$ είναι πεπερασμένο, τότε το $M$ είναι πεπερασμένα παραγόμενο $\Lambda$-πρότυπο.
+\end{lemma}
+
+\begin{proof} Έστω $U$ μια περιοχή του $0$ στο $M$. Υπενθυμίζουμε ότι $(p,T)^n \rightarrow 0$ στο $\Lambda$. Συνεπώς, για οποιοδήποτε $m \in M$ υπάρχει περιοχή $U_m$ έτσι ώστε $(p,T)^n U_m \subseteq U$ για αρκετά μεγάλο $n$. Τώρα χρησιμοποιούμε την συμπάγεια του $M$ για να διαλέξουμε ένα πεπερασμένο κάλυμμα για το $M$. Συνεπώς, παίρνοντας το $N$ να είναι το μέγιστο $n$ που χρειάζεται για αυτό το πεπερασμένο κάλυμμα παίρνουμε ότι $(p,T)^N M \subset U$. Καθώς το $U$ ήταν τυχαία περιοχή του $0$, έχουμε ότι $\bigcap \left( (p,T)^n M\right) = 0$. Έστω ότι τα $m_1,\ldots, m_n$ παράγουν το $M/(p,T)M$. Θέτουμε $N = \Lambda m_1 + \cdots \Lambda m_n \subseteq M$. Παρατηρούμε ότι το $N$ είναι συμπαγές καθώς είναι η εικόνα του $\Lambda$, άρα είναι κλειστό. Συνεπώς, το $M/N$ είναι ένα συμπαγές $\Lambda$-πρότυπο. Εφόσον τα $m_i$ παράγουν το $M/(p,T)M$ αυτό μας δίνει ότι $N+(p,T)M = M$. Συνεπώς, έχουμε
+    $$(p,T)(M/N) = (N+(p,T)M)/N = M/N.$$ Άρα,
+    $$(p,T)^n (M/N) = (M/N)$$ για κάθε $n\geq 0$. Εφόσον το $(p,T)$ είναι το μοναδικό μέγιστο ιδεώδες όπως έχουμε δείξει, από το λήμμα του \tl{Nakayama} παίρνουμε ότι $M/N = 0$, δηλαδή τα $m_1,\ldots,m_n$ παράγουν το $M$.
+\end{proof}
+
+\begin{cor}\label{cor4.24}
+    Το $\Lambda$-πρότυπο $X= \Gal(L/K_\infty)$ είναι πεπερασμένα παραγόμενο.
+\end{cor}
+
+\begin{proof} Υπενθυμίζουμε ότι
+    $$\nu_1 = \frac{(1+T)^p -1}{T}$$
+    Είναι προφανές ότι $\nu_1 \in (p,T)$. Συνεπώς, έχουμε ότι το $Y_0/(p,T)Y_0$ έιναι πηλίκο του $Y_0/\nu_1 \cdot Y_0 = Y_0/Y_1 \subset X/Y_1 = X_1$. Ξέρουμε ότι το $X_1$ είναι πεπερασμένο σύνολο και άρα είναι και το $Y_0/(p,T)Y_0$ πεπερασμένο. Εφαρμόζοντας το προηγούμενο λήμμα παίρνουμε ότι το $Y_0$ είναι πεπερασμένα παραγόμενο. Καθώς τώρα το $X/Y_0 = X_0$ είναι πεπερασμένο, το ίδιο το $X$ θα είναι πεπερασμένα παραγόμενο ως $\Lambda$-πρότυπο.
+\end{proof}
+
+\noindent Όλα τα παραπάνω αποτελέσματα έχουν γίνει υπό την υπόθεση ότι $m=0$, δηλαδή η επέκταση $K_\infty/K$ είναι πλήρως διακλαδιζόμενη σε όποιο πρώτο διακλαδίζεται. Τώρα θα σταματήσουμε να είμαστε κάτω από αυτή την υπόθεση. Έστω $K_\infty/K$ μια $\Z_p$-επέκταση και $K_m$ να είναι όπως στην πρόταση \ref{prop4.18}. Υπενθυμίζουμε ότι οι επεκτάσεις $K_\infty/K$ και $K_\infty/K_m$ αντιστοιχούν στο ίδιο $X$. Άρα έχουμε ότι το $X$ είναι πεπερασμένα παραγόμενο $\Lambda$-πρότυπο από το πόρισμα \ref{cor4.24}. Για $n\geq m$, αντικαθιστούμε το $\nu_n$ με το $\nu_{n,m}$ που ορίζουμε ως εξής:
+
+\begin{align*} 
+    \nu_{n,m} &= \frac{\nu_n}{\nu_m} \\
+    &= 1+\gamma_0^{p^m} + \gamma_0^{2p^m} + \cdots + \gamma_0^{p^n - p^m}.
+\end{align*} Αυτό δουλεύει καθώς $\Gal(K_\infty/K_m) \cong \Gamma^{p^m}$ η οποία παράγεται από το $\gamma_0^{p^m}$. Άρα με τις κατάλληλες αντικαταστάσεις διορθώνουμε το λήμμα \ref{lemma4.22} και παίρνουμε το πιο ισχυρό:
+
+\begin{lemma} Έστω $K_\infty/K$ μια $\Z_p$-επέκταση. Το $X$ είναι πεπερασμένα παραγόμενο $\Lambda$-πρότυπο και υπάρχει $m\geq 0$ τέτοιο ώστε
+    $$X_n \cong X/\nu_{n,m} \cdot Y_m$$ για κάθε $n\geq m$, όπου το $Y_m$ είναι αυτό που έχει οριστεί προηγουμένως.
+\end{lemma}
+
+
+\noindent Είμαστε τώρα σε θέση να εφαρμόσουμε το θεώρημα δομής για τα πεπερασμένα παραγόμενα $\Lambda$-πρότυπα στο $X$ και στο $Y_m$. Παρατηρούμε ότι παίρνουμε το ίδιο αποτέλεσμα από το θεώρημα είτε χρησιμοποιήσουμε το $X$ ή το $Y_m$, καθώς το $X/Y_m$ είναι πεπερασμένο και το θεώρημα δομής είναι σε όρους ψευδο-ισομορφισμού. Συνεπώς, έχουμε
+
+    \begin{equation}\label{eq4.4}
+    X \sim Y_m \sim \Lambda^r \oplus \left( \bigoplus \Lambda/(p^{\mu_i})\right) \oplus \left(\bigoplus \Lambda/(f_j(T)^{m_j})\right).
+\end{equation}
+
+\noindent Και το επόμενο μας βήμα είναι να υπολογίσουμε το $M/\nu_{n,m}M$ για κάθε όρο $M$ του ευθέους αθροίσματος παραπάνω στην σχέση \ref{eq4.4}. Κάνοντας το, θα πάρουμε τα φράγματα που θέλουμε για την τάξη $|X_n|$.
+
+
+$ $\newline
+\textbf{Περίπτωση 1:} $M = \Lambda$.
+
+
+\noindent Παρατηρούμε ότι το $\nu_{n,m}$ όχι μόνο δεν είναι αντιστρέψιμο στο $\Lambda$, αλλά είναι \tl{distinguished} πολυώνυμο. Επομένως από το λήμμα \ref{lemma4.10} παίρνουμε ότι το $\Lambda/(\nu_{n,m})$ έχει άπειρη τάξη. Ωστόσο, έχουμε ήδη ότι το $Y_m/\nu_{n,m}Y_m$ είναι πεπερασμένο. Άρα αναγκαστικά $r=0$.
+
+$ $\newline
+\textbf{Περίπτωση 2:} $M = \Lambda/(p^k)$ για κάποιο $k>0$.
+
+\noindent Σε αυτή τη περίπτωση έχουμε να εξετάσουμε το $\Lambda/(p^k,\nu_{n,m})$. Εφόσον το $\nu_{n,m}$ είναι \tl{distinguished} πολυώνυμο, μπορούμε να εφαρμόσουμε τον αλγόριθμο διαίρεσης ώστε να καταλήξουμε στο ότι τα στοιχεία του $\Lambda/(p^k,\nu_{n,m})$ είναι ακριβώς τα πολυώνυμα \tl{modulo} $p^k$ βαθμού μικρότερου του $\deg \nu_{n,m} = p^n - p^m$. Συνεπώς,
+$$|M/\nu_{n,m}M| = (p^k)^{p^n-p^m} = p^{kp^n+c}$$ όπου $c=-kp^m$, μια σταθερά που εξαρτάται από το σώμα $K$.
+
+$ $\newline
+\textbf{Περίπτωση 3:} $M = \Lambda/(f(T)^r)$.
+
+\noindent Έστω $g(T) = f(T)^r$. Υποθέτουμε ότι το $g$ έχει βαθμό $d$. Καθώς το $f$ είναι \tl{distinguished} πολυώνυμο, θα είναι και το $g$. Άρα έχουμε ότι
+
+$$T^k \equiv p \cdot (\text{πολυώνυμο}) (\operatorname{mod}g) $$ για $k\geq d$. Θα χρησιμοποιούμε τον όρο ((πολυώνυμο στις παρακάτω πράξεις αρκετές φορές)), ωστόσο δεν σημαίνει ότι θα είναι το ίδιο πολυώνυμο κάθε φορά. Έστω $p^n \geq d$. Έχουμε
+
+\begin{align*}
+    (1+T)^{p^n} &= 1+ p \cdot (\text{πολυώνυμο}) + T^{p^n} \\ 
+    &\equiv 1 +  p \cdot (\text{πολυώνυμο}) (\operatorname{mod}g).
+\end{align*} Ειδικότερα, έχουμε ότι
+
+\begin{align*}
+    (1+T)^{p^{n+1}} &= \left((1+T)^{p^n}\right)^p \\ 
+    &\equiv \left(1+p \cdot (\text{πολυώνυμο})\right)^p (\operatorname{mod}g) \\
+    &\equiv 1+p^2 \cdot (\text{πολυώνυμο}) (\operatorname{mod}g)
+\end{align*}
+
+\noindent Θέτουμε $P_n(T) = (1+T)^{p^n}-1$. Κάνοντας τις πράξεις έχουμε
+
+\begin{align*}
+    P_{n+2}(T) & = \left(1+T\right)^{p^{n+2}} -1 \\
+    &= \left( (1+T)^{p^{n+1}} - 1\right)\left(1+( 1+T)^{p^{n+1}} + \cdots + (1+T)^{p^{n+1}(p-1)}\right) \\
+    &= P_{n+1}(T) \left(1+(1+T)^{p^{n+1}} + \cdots + (1+T)^{p^{n+1}(p-1)}\right) \\
+    &\equiv P_{n+1}(T) (1+\cdots + 1 + p^2 \cdot (\text{πολυώνυμο})\ ) \ (\operatorname{mod}g)\\
+    &\equiv P_{n+1}(T) (p+p^2 \cdot (\text{πολυώνυμο}) \ ) \ (\operatorname{mod}g) \\
+    &\equiv p(1+p\cdot (\text{πολυώνυμο}))P_{n+1}(T) \ (\operatorname{mod}g).
+\end{align*}
+
+\noindent Εφόσον το $1+p\cdot (\text{πολυώνυμο})$ είναι αναγκαστικά αντιστρέψιμο στο $\Lambda$, έχουμε ότι το $\frac{P_{n+2}(T)}{P_{n+1}(T)}$ δρα στο $\Lambda/(g)$ ως $p\cdot U$ για ένα $U \in \Lambda^\times$, με την προϋπόθεση ότι $p^n\geq d$. 
+Υποθέτουμε τώρα ότι έχουμε $n_0 > m, p^{n_0} \geq d$ και $n\geq n_0$. Παρατηρούμε ότι
+$$\frac{\nu_{n+2,m}}{\nu_{n+1,m}} = \frac{\nu_{n+2}}{\nu_{n+1}} = \frac{P_{n+2}}{P_{n+1}}.$$ Συνεπώς,
+
+\begin{align*}
+    \nu_{n+2,m} M &= \frac{P_{n+2}}{P_{n+1}} \nu_{n+1,m} M \\
+    &= p \nu_{n+1,m}M .
+\end{align*}
+
+\noindent Οπότε έχουμε
+$$|M/\nu_{n+2,m}M| = |M/pM| \cdot |pM/p\nu_{n+1,m}M|$$ Καθώς το $g$ είναι \tl{distinguished} πολυώνυμο έχουμε $\gcd(p,g)=1$. Ειδικότερα, αυτό σημαίνει ότι ο πολλαπλασιασμός με $p$ είναι μια 1-1 απεικόνιση. Άρα
+$$|pM/p\nu_{n+1,m}M| = |M/\nu_{n+1,m}M|.$$ Επιπλέον, ισχύει ότι
+$$M/pM \cong \Lambda/(p,g) = \Lambda/(p,T^d)$$ και άρα $|M/pM| = p^d$. Συνεπώς, σε λίγα βήματα έχουμε
+
+\begin{align*}
+    |M/\nu_{n,m}M| &= |M/pM| \cdot | pM/ p \nu_{n-1,m}M| \\
+    &= p^d \cdot |M/\nu_{n-1,m}M| \\
+    &= p^d \cdot p^d \cdot |pM/p\nu_{n-2,m}M| \\
+    &= \cdots \\
+    &= p^{d(n-n_0-1)}|M/\nu_{n_0+1,m}M|
+\end{align*} για τα $n\geq n_0+1$.
+
+\noindent Οπότε, αν το $|M/\nu_{n,m}M|$ είναι πεπερασμένο για κάθε $n$ παίρνουμε ότι $|M/\nu_{n,m}M| = p^{dn+c}$ για τα $n\geq n_0 + 1$ και $c$ μια σταθερά που εξαρτάται από το σώμα $K$. Αν το $M/\nu_{n,m}M$ ήταν άπειρο για οποιοδήποτε $n$, τότε το $M$ δεν θα μπορούσε να προκύψει όπως είδαμε στην περίπτωση 1. Άρα έχουμε δείξει το ακόλουθο αποτέλεσμα. 
+
+\begin{prop}
+    Υποθέτουμε ότι 
+
+    $$N = \Lambda^r \oplus \left( \bigoplus \Lambda/(p^{\mu_i})\right) \oplus \left(\bigoplus \Lambda/(f_j(T))\right),$$ όπου κάθε $f_j$ είναι \tl{distinguished}. Έστω $\mu = \sum \mu_i$ και $\lambda = \sum \deg f_j$. Αν το $N/\nu_{n,m}N$ είναι πεπερασμένο για κάθε $n$, τότε $r=0$ και υπάρχουν $n_0$ και $c$ έτσι ώστε
+
+    $$|N/\nu_{n,m}N| = p^{\mu p^n + \lambda n + c}$$ για κάθε $n\geq n_0$.
+\end{prop}
+
+\noindent Ξέρουμε ότι το $Y_m$ είναι ψευδο-ισόμορφο με ένα κατάλληλο $N$ όπως αυτό δίνεται στην παραπάνω πρόταση. Επιπλέον, ξέρουμε την τάξη του $N/\nu_{n,m}N$ για όλα τα $n\geq n_0$. Άρα μας μένει να συσχετίσουμε την τάξη αυτή στην τάξη του $Y_m/\nu_{n,m}Y_m$. Το πρόβλημα εδώ είναι ότι τα άκρα της ακριβής ακολουθίας που έχουμε στον ορισμό του ψευδο-ισομορφισμού μπορεί να διαφέρουν καθώς αλλάζει το $n$. Ξέρουμε ότι από το προηγούμενο αποτέλεσμα η τάξη της $|Y_m/\nu_{n,m}Y_m|$ έχει την μορφή που θέλουμε, αλλά καθώς αλλάζουν τα άκρα δεν έχουμε δείξει προς το παρόν ότι αυτό δεν θα διαφοροποιείται. Οπότε, αρκεί να δείξουμε ότι για αρκετά μεγάλο $n$ οι τάξεις των άκρων στις ακριβείς ακολουθίες θα παραμείνουν σταθερές. Το πετυχαίνουμε αυτό στο επόμενο λήμμα, με μια τυπική εφαρμογή του λήμματος του φιδιού.
+
+
+\begin{lemma}
+    Έστω $M$ και $N$ να είναι $\Lambda$-πρότυπα με $M\sim N$ και το $M/\nu_{n,m}M$ να έχει πεπερασμένη τάξη για κάθε $n\geq m$. Για κάποιο σταθερό $a$ και κάποιο $n_0$ έχουμε
+    $$ |M/\nu_{n,m}M| = p^a |N/\nu_{n,m}N|$$ για κάθε $n\geq n_0$. 
+\end{lemma}
+
+\begin{proof} Εφόσον υποθέτουμε ότι $M\sim N$ έχουμε την ακριβή ακολουθία
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            0 \arrow[r] & \ker \phi \arrow[r] & M \arrow[r, "\phi"] & N \arrow[r] & \operatorname{coker} \phi \arrow[r] & 0
+            \end{tikzcd}
+    \end{figure} 
+    \noindent με τα $\ker\phi$ και $\operatorname{coker}\phi$ να είναι πεπερασμένα. Χρησιμοποιώντας αυτήν την ακριβή ακολουθία παίρνουμε το παρακάτω μεταθετικό διάγραμμα
+
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            & 0 \arrow[d]                                        & 0 \arrow[d]                        & 0 \arrow[d]                                                 &   \\
+            & \ker \phi^\prime_n \arrow[d]                       & \ker\phi \arrow[d]                 & \ker \phi^{\prime\prime}_n \arrow[d]                        &   \\
+0 \arrow[r] & {\nu_{n,m} M} \arrow[d, "\phi^\prime_n"] \arrow[r] & M \arrow[r] \arrow[d, "\phi"]      & {M/\nu_{n,m}M} \arrow[r] \arrow[d, "\phi^{\prime\prime}_n"] & 0 \\
+0 \arrow[r] & {\nu_{n,m}N} \arrow[d] \arrow[r]                   & N \arrow[r] \arrow[d]              & {N/\nu_{n,m}N} \arrow[r] \arrow[d]                          & 0 \\
+            & \operatorname{coker}\phi^\prime_n \arrow[d]        & \operatorname{coker}\phi \arrow[d] & \operatorname{coker}\phi^{\prime\prime}_n \arrow[d]         &   \\
+            & 0                                                  & 0                                  & 0                                                           &  
+\end{tikzcd}
+    \end{figure}
+
+\noindent Ο στόχος μας είναι να δείξουμε ότι για αρκετά μεγάλο $n$ οι τάξεις $|\ker \phi^{\prime\prime}_n|$ και $|\operatorname{coker}\phi^{\prime\prime}_n|$ μένουν σταθερά. Το αποδεικνύουμε αυτό με το να δείξουμε ότι σαν ακολουθίες είναι φθίνουσες και φραγμένες. Είναι ξεκάθαρο ότι $|\coker\pi^{\prime\prime}_n|\leq |\coker \phi|$
+καθώς παίρνουμε τους αντιπροσώπους του $\coker\phi^{\prime\prime}_n$ από αυτούς του $\coker\phi$. Για να δούμε ότι το $|\ker\phi^{\prime\prime}_n|$ είναι φραγμένο, εφαρμόζουμε το λήμμα του φιδιού για να πάρουμε την μακριά ακριβή ακολουθία
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        0 \arrow[r] & \ker \phi^{\prime}_n  \arrow[r]   & \ker \phi \arrow[r]  & \ker \phi^{\prime\prime}_n  \arrow[r]  & {} \\
+                    & \coker \phi^{\prime}_n  \arrow[r] & \coker\phi \arrow[r] & \coker\phi^{\prime\prime}_n  \arrow[r] & 0 
+        \end{tikzcd}
+\end{figure}
+\noindent Από την οποία παίρνουμε ότι
+\begin{align*}
+|\ker\phi^{\prime\prime}_n| &\leq |\ker\phi| \cdot |\coker\phi^{\prime}_n| \\
+&\leq |\ker\phi|\cdot |\coker\phi| ,
+\end{align*} όπου χρησιμοποιήσαμε ότι $|\coker\phi^\prime_n| \leq |\coker\phi|$, το οποίο ισχύει εφόσον για να πάρουμε τους αντιπροσώπους του $\coker\phi^\prime_n$ πολλαπλασιάζουμε τους αντιπροσώπους του $\coker\phi$ με $\nu_{n,m}$. 
+Άρα το $|\ker\phi^{\prime\prime}_n|$ είναι πράγματι φραγμένο.
+
+$ $\newline
+Θα δείξουμε τώρα ότι αυτά φθίνουν. Έστω $n^\prime \geq n \geq 0$. Τότε έχουμε $|\coker\phi^{\prime\prime}_{n^\prime}| \leq |\coker\phi^{\prime\prime}_n|$ καθώς
+$$\nu_{n^\prime,m}N = \nu_{n,m}\left(\frac{\nu_{n^\prime,m}}{\nu_{n,m}}\right)N \subseteq \nu_{n,m}N .$$ Άρα, για αρκετά μεγάλο $n$ 
+έχουμε ότι το $|\coker\phi^{\prime\prime}_n|$ είναι σταθερό. Μένει να δείξουμε το ίδιο για το $|\ker\phi^{\prime\prime}_n|$. Από το 
+λήμμα του φιδιού έχουμε ότι
+
+$$|\ker\phi^\prime_n| \cdot |\ker\phi^{\prime\prime}_n| \cdot | \coker\phi| = |\ker\phi| \cdot |\coker\phi^\prime_n| \cdot 
+|\coker\phi^{\prime\prime}_n|.$$ Συνεπώς, αρκεί να δείξουμε ότι για μεγάλο $n$ τα $|\ker\phi^{\prime}_n|$ και $|\coker\phi^\prime_n|$ είναι σταθερά. 
+Από το μεταθετικό διάγραμμα έχουμε ότι $\ker\phi^\prime_n \subset \ker\phi$, άρα εύκολα παίρνουμε ότι το $|\ker\phi^\prime_n|$ είναι φραγμένο. Για να δούμε ότι φθίνει, παρατηρούμε ότι $\nu_{n^\prime,m} M \subseteq \nu_{n,m}M$ και από αυτό έπεται ότι $\ker\phi^\prime_{n^\prime}\subseteq \ker\phi^\prime_n$.
+
+$ $\newline
+Θα ασχοληθούμε τώρα με το $|\coker\phi^\prime_n|$. Έχουμε όπως αναφέραμε πριν ότι $|\coker\phi^\prime_{n^\prime}| \leq |\coker\phi|$, άρα πρέπει να δείξουμε ότι το $|\coker\phi^\prime_n|$ φθίνει. Έστω $\nu_{n^\prime,m}y\in \nu_{n^\prime,m}N$. Σταθεροποιούμε ένα σύνολο αντιπροσώπων του $\coker\phi^\prime_n$ και έστω $z\in \nu_{n,m}N$ να είναι ο αντιπρόσωπος του $\nu_{n,m}y$ στο $\coker\phi^\prime_n$. Παρατηρούμε ότι 
+$$\nu_{n,m}y - z = \phi(\nu_{n,m}x)$$ για κάποιο $x \in M$ καθώς αυτό θα είναι αναγκαστικά μέσα στην εικόνα $\operatorname{im}(\phi^\prime_n)$ η οποία εμφυτεύεται στην $\operatorname{im}(\phi)$. Συνεπώς, έχουμε 
+
+$$\left( \frac{\nu_{n^\prime,m}}{\nu_{n,m}}\right) \nu_{n,m}y - \left( \frac{\nu_{n^\prime,m}}{\nu_{n,m}}\right)z = \left( \frac{\nu_{n^\prime,m}}{\nu_{n,m}}\right)\phi(\nu_{n,m}x) ,$$ δηλαδή
+
+\begin{align*}
+\nu_{n^\prime,m}y - \left( \frac{\nu_{n^\prime,m}}{\nu_{n,m}}\right)z &=\phi(\nu_{n^\prime,m}x) \\
+&= \phi^\prime_{n^\prime}(\nu_{n^\prime,m}x) .
+\end{align*} Άρα με το να πολλαπλασιάσουμε τους αντιπροσώπους του $\coker\phi^\prime_n$ με το $\frac{\nu_{n^\prime,m}}{\nu_{n,m}}$ παίρνουμε αντιπροσώπους του $\coker\phi^\prime_{n^\prime}$, το οποίο αποδεικνύει ότι $|\coker\phi^\prime_{n^\prime}| \leq |\coker\phi^\prime_n|$.
+
+$ $\newline
+Συνοψίζοντας, έχουμε την ακριβή ακολουθία
+$$0\longrightarrow \ker\phi^{\prime\prime}_n \longrightarrow M/\nu_{n,m}M \longrightarrow N/\nu_{n,m}N \longrightarrow \coker\phi^{\prime\prime}_n \longrightarrow 0$$
+και $n_0$ έτσι ώστε για τα $n\geq n_0$ οι όροι $|\ker\phi^{\prime\prime}_n|, |\coker\phi^{\prime\prime}_n|$ να είναι σταθεροί, άρα έχουμε το επιθυμητό αποτέλεσμα.
+
+\end{proof}
+
+$ $\newline
+Είναι πλέον απλό να ολοκληρώσουμε την απόδειξη του θεωρήματος του \tl{Iwasawa}, δηλαδή του θεωρήματος \ref{theorem4.1}. Έχουμε δείξει ότι υπάρχουν ακέραιοι $n_0,\nu,\lambda\geq 0$, και $\mu\geq 0$ έτσι ώστε 
+\begin{align*}
+    p^{e_n} &= |X_n| \\
+    &= |X/Y_m|\cdot |Y_m/\nu_{n,m}Y_m| \\
+    &=p^b \cdot |N/\nu_{n,m}N| \\ 
+    &= p^{\lambda n + \mu p^n + \nu}
+\end{align*} για κάθε $n\geq n_0$. \qed
+
+$ $\newline
+Αξίζει να σημειωθεί ότι λόγω της ασυμπτωτικής φύσης που έχει το αποτέλεσμα δεν μπορεί να λειτουργήσει 
+αυτός ο τύπος για την ακριβή εύρεση της τάξης της ομάδας κλάσεων ιδεωδών. Αυτό είναι γενικότερα ένα δύσκολο πρόβλημα 
+υπολογιστικά και ο αλγόριθμος που χρησιμοποιείται σήμερα για τον υπολογισμό των μεγάλων τάξεων υποθέτει την ορθότητα της γενικευμένης 
+υπόθεσης του \tl{Riemann} \cite{Lmfdb}. Από όλα τα παραπάνω επιχειρήματα που κάναμε, το $n_0$ αρχικά εξαρτάται από ποιο βήμα και μετά ανεβαίνοντας τον πύργο $K_\infty/K$ τα ιδεώδη που διακλαδίζονται να διακλαδίζονται πλήρως, δηλαδή από ποιο $m$ ξεκινάει να συμβαίνει αυτό για την επέκταση $K_\infty/K_m$. 
+Επιπλέον, εξαρτάται από ποιο $n$ και πάνω ο πυρήνας και ο συνπυρήνας διατηρούν σταθερή τάξη στον ομομορφισμό που έχουμε από το θεώρημα 
+δομής.
+
+$ $\newline
+Κλείνουμε την ενότητα με κάποιες εφαρμογές από την δουλειά που έχουμε κάνει. Υπενθυμίζουμε ότι $X_n \cong A_n$ όπου $A_n$ είναι η $p$-\tl{Sylow} υποομάδα της ομάδας κλάσεων του $K_n$. Θα εξακολουθούμε να χρησιμοποιούμε το $X_n$ σαν συμβολισμό μαζί με ότι το $h_n$ είναι η τάξη της ομάδας κλάσεων του $K_n$. Συγκεκριμένα, η τάξη του $A_n$ είναι το $p$-μέρος του $h_n$. Χρησιμοποιώντας το λήμμα \ref{nakayama} του \tl{Nakayama} έχουμε το εξής αποτέλεσμα.
+
+\begin{prop}
+    Έστω $K_\infty/K$ μια $\Z_p$-επέκταση στην οποία ακριβώς ένας πρώτος διακλαδίζεται. Επιπλέον, υποθέτουμε ότι αυτός διακλαδίζεται πλήρως. Τότε έχουμε
+    $$X_n \cong X/((1+T)^{p^n}-1)X$$ και $p\nmid h_0$ αν και μόνο αν $p\nmid h_n$ για κάθε $n\geq 0$.
+\end{prop}
+
+\begin{proof}
+    Έχουμε ότι για την επέκταση $K_\infty/K$ ισχύει η προϋπόθεση $m=0$ που είχαμε κάνει όταν αποδεικνύαμε το λήμμα \ref{lemma4.22}. Συγκεκριμένα $s=1$, το πλήθος των πρώτων, και $Y_0 = TX$. Συνεπώς,
+
+    \begin{align*}
+        Y_n &= \nu_n TX \\
+        &= \left(\frac{(1+T)^{p^n}-1}{T}\right)TX
+    \end{align*} το οποίο μας δίνει το πρώτο αποτέλεσμα. Υποθέτουμε ότι $p\nmid h_0$. Ειδικότερα, αυτό μας δίνει ότι $X_0 = 0$, δηλαδή $X/TX = 0$. Ωστόσο, αυτό σημαίνει ότι
+    $$\frac{X}{TX} \supseteq \frac{X}{(p,T)} = 0,$$ δηλαδή 
+    $$(p,T) X = X$$ και άρα από το λήμμα του \tl{Nakayama} παίρνουμε ότι $X=0$.
+\end{proof}
+
+\noindent Εδώ παρατηρούμε ότι δεν μπορούμε να χρησιμοποιήσουμε το θεώρημα \ref{theorem4.1} για να καταλήξουμε στο αποτέλεσμα σχετικά με την διαιρετότητα του $h_n$ καθώς το θεώρημα \ref{theorem4.1} ισχύει μόνο για τα $n$ μεγαλύτερα από κάποιο $n_0$ και όχι για όλα τα $n\geq 0$.
+
+\noindent Υπενθυμίζουμε ότι για $A$ μια πεπερασμένη αβελιανή ομάδα έχουμε όρισει το $p\operatorname{-rank}(A)$ να είναι η διάσταση του $A/pA$ ως $\mathbb{F}_p$-διανυσματικού χώρου, δηλαδή
+$$p\operatorname{-rank}(A) = \dim_{\Z/p\Z}(A/pA)$$
+
+\begin{lemma}
+    Έστω το $\Lambda$-πρότυπο $N$ που δίνεται ως εξής
+    $$N = \left(\bigoplus\limits_{i=1}^s \Lambda/(p^{\mu_i})\right) \oplus \left(\bigoplus \limits_{j=1}^t \Lambda/(f_j(T))\right),$$ όπου τα $f_j$ είναι \tl{distinguished} πολυώνυμα. Θέτουμε $\mu = \sum \mu_i$. Τότε $\mu = 0$ αν και μόνο αν το $p\operatorname{-rank}(N/\nu_{n,m}N)$ είναι φραγμένο καθώς $n\longrightarrow \infty$.
+\end{lemma}
+
+\begin{proof} Το $\nu_{n,m}$ είναι \tl{distinguished} πολυώνυμο βαθμού $p^n-p^m$. Συνεπώς, μπορούμε να πάρουμε μεγάλο $n$ έτσι ώστε να έχουμε ότι ο βαθμός του $\nu_{n,m}$ θα είναι μεγαλύτερος από το μέγιστο των βαθμών των $f_j$. Για αυτό το $n$ έχουμε
+
+    \begin{align*} 
+        N/(p,\nu_{n,m})N &= \left( \bigoplus\limits_{i=1}^s \frac{\Lambda/(p^{\mu_i})}{ (p,\nu_{n,m})/(p^{\mu_i})}\right) \oplus \left( \bigoplus\limits_{j=1}^t \frac{\Lambda/(f_j(T))}{ (p,\nu_{n,m})/(f_j(T))}\right)\\
+        &= \left( \bigoplus\limits_{i=1}^s \Lambda/(p,\nu_{n,m})\right) \oplus \left( \bigoplus\limits_{j=1}^t \Lambda/(p,f_j,\nu_{n,m})\right) \\
+        &= \left( \bigoplus\limits_{i=1}^s \Lambda/(p,T^{p^n - p^m})\right) \oplus \left( \bigoplus\limits_{j=1}^t \Lambda/(p,T^{\deg f_j})\right) \\
+        &\cong (\Z/p\Z)^{s(p^n-p^m)+\lambda},
+    \end{align*} όπου $\lambda = \sum \deg f_j$. Από την τελευταία σχέση είναι ξεκάθαρο ότι το $p\operatorname{-rank}$ είναι φραγμένο αν και μόνο αν $s=0$, δηλαδή αν και μόνο αν $\mu = 0$.
+\end{proof}
+
+\begin{prop}
+    Θεωρούμε το $\mu$ όπως είναι στο θεώρημα \ref{theorem4.1}. Τότε $\mu = 0$ αν και μόνο αν το $p\operatorname{-rank}(X_n)$ είναι φραγμένο καθώς $n\longrightarrow \infty$.
+\end{prop}
+
+\begin{proof}Έχουμε ότι το $\mu = 0$ αν και μόνο αν το $p\operatorname{-rank}(N/\nu_{n,m}N)$ είναι φραγμένο, από το προηγούμενο λήμμα όπου το $N$ είναι όπως παραπάνω. Υπενθυμίζουμε ότι έχουμε την ακριβή ακολουθία
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            0 \arrow[r] & \ker \phi^{\prime\prime}_n \arrow[r] & {Y_m/\nu_{n,m}Y_m} \arrow[r, "\phi^{\prime\prime}_n"] & {N/\nu_{n,m}N} \arrow[r] & \coker \phi^{\prime\prime}_n \arrow[r] & 0
+            \end{tikzcd}
+    \end{figure} 
+    \noindent όπου ξέρουμε ότι τα $|\ker\phi^{\prime\prime}_n|$ και $|\coker\phi^{\prime\prime}_n|$ είναι φραγμένα ανεξαρτήτως του $n$ για αρκετά μεγάλο $n$. Από αυτό έπεται ότι $\mu = 0$ αν και μόνο αν το $p\operatorname{-rank}(Y_m/\nu_{n,m}Y_m)$ είναι φραγμένο. Ωστόσο, ξέρουμε ότι $X_n\cong X/\nu_{n,m}Y_m$ και το $X/Y_m \cong X_m$ είναι πεπερασμένο και ανεξάρτητο του $n$. Άρα το $X_n$ διαφέρει από το $Y_m/\nu_{n,m}Y_m$ κατά μια πεπερασμένη ομάδα που με φραγμένη τάξη που δεν εξαρτάται από το $n$. Συνεπώς, έπεται το αποτέλεσμα.
+\end{proof}

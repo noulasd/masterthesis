@@ -1,0 +1,152 @@
+\section{Θεωρία Κλάσεων Σωμάτων}
+
+Έστω $k$ ένα σώμα αριθμών και $I = I_k$ να είναι η ομάδα των κλασματικών ιδεωδών του $k$. 
+Θεωρούμε $S$ να είναι ένα πεπερασμένο σύνολο θέσεων του $k$ και $I^S$ η υποομάδα της $I$ που παράγεται από τα πρώτα ιδεώδη που δεν 
+ανήκουν στο $S$. Επιπλέον, έστω $\mathfrak{m}_f = \prod \p^{e_i}_i$ να είναι ένα ακέραιο ιδεώδες του $k$ και $\mathfrak{m}_\infty$ 
+να είναι ένα ελεύθερο τετραγώνων γινόμενο πραγματικών αρχιμήδειων θέσεων του $k$. Θα λέμε το 
+$\mathfrak{m} = \mathfrak{m}_f \mathfrak{m}_\infty$ έναν {\em διαιρέτη} του $k$, με $\mathfrak{m}(\p_i) = e_i$. Για 
+$a \in \mathcal{O}_k$, θα γράφουμε $a \equiv 1(\operatorname{mod*}\mathfrak{m})$ αν
+
+\begin{enumerate}
+    \item $\nu_{\p_i}(a-1)\geq e_i$ για όλους τους πρώτους $\p_i \mid \mathfrak{m}_f$.
+    \item $a>0$ για όλους τους πραγματικούς πρώτους που διαιρούν το $\mathfrak{m}_\infty$.
+\end{enumerate} 
+\noindent Θέτουμε $P_{\mathfrak{m},1}$ να είναι το σύνολο των κύριων ιδεωδών του $\mathcal{O}_k$ που παράγονται από ένα στοιχείο $a$, 
+έτσι ώστε $a\equiv 1(\operatorname{mod*}\mathfrak{m})$. Θα γράφουμε ως $S(\mathfrak{m})$ το σύνολο των πρώτων που διαιρούν το 
+$\mathfrak{m}$.
+
+\begin{defn}
+    Έστω $\mathfrak{m}$ ένας διαιρέτης του $k$. Η ομάδα $C_\mathfrak{m} = I^{S(\mathfrak{m})}/P_{\mathfrak{m},1}$ ονομάζεται \tl{ray} ομάδα κλάσεων του $k$ \tl{modulo} $\mathfrak{m}$.
+\end{defn}
+
+\begin{theorem}[Θεώρημα 1.7 στο \cite{Milne2}]
+    Για κάθε $\mathfrak{m}$ διαιρέτη του $k$, υπάρχει ακριβής ακολουθία
+    $$0 \longrightarrow U/U_{\mathfrak{m},1} \longrightarrow P_\mathfrak{m} / P_{\mathfrak{m},1} \longrightarrow C_\mathfrak{m} \longrightarrow 0$$ και κανονικοί ισομορφισμοί
+    $$P_\mathfrak{m}/P_{\mathfrak{m},1} \cong \prod\limits_{\substack{\p \mid \infty \\ \p \mid \mathfrak{m}}} \{\pm 1 \} \times \prod\limits_{\substack{\p \nmid \infty \\ \p \mid \mathfrak{m}}} \left( \mathcal{O}_k/ \p^{\mathfrak{m}(\p)} \right)^\times \cong \prod\limits_{\substack{\p \mid \infty \\ \p \mid \mathfrak{m}}} \{\pm 1\} \times \left( \mathcal{O}_k / \mathfrak{m}_f\right)^\times$$ όπου 
+
+    \begin{align*}
+        P_\mathfrak{m} &= \{ a \in k^\times: \ \operatorname{ord}_{\p}(a) = 0 \ \text{ για κάθε } \p \mid \mathfrak{m}_f\}, \\
+        U &= \mathcal{O}_k^\times, \\ 
+        U_{\mathfrak{m},1} &= U\cap P_{\mathfrak{m},1}.
+    \end{align*}
+\end{theorem}
+
+\noindent Για παράδειγμα, αν $\mathfrak{m}=1$ η \tl{ray} ομάδα κλάσεων $C_\mathfrak{m}$ δεν είναι τίποτα παραπάνω από την συνήθη ομάδα 
+κλάσεων ιδεωδών. Επιπλέον, αν $n \in \mathbb{N}$ και $\mathfrak{m} = n$, τότε το $I^{S(\mathfrak{m})}$ είναι το σύνολο των ιδεωδών που 
+παράγονται από τους ρητούς αριθμούς, οι οποίοι είναι σχετικά πρώτοι ως προς το $n$. Αν $(x) \in P_{\mathfrak{m},1}$, τότε αναγκαστικά 
+$x \equiv 1 (\operatorname{mod}n)$ και $x >0$. Η ακριβής ακολουθία γίνεται
+$$0 \longrightarrow \{\pm 1\} \longrightarrow (\Z/n\Z)^\times \longrightarrow C_\mathfrak{m} \longrightarrow 0.$$ Συνεπώς, έχουμε σε 
+αυτήν την περίπτωση ότι η \tl{ray} ομάδα κλάσεων είναι ισόμορφη με την $$C_\mathfrak{m} \cong (\Z/n\Z)^\times / \{\pm 1\}.$$
+
+
+\noindent Έστω $K$ μια πεπερασμένη επέκταση \tl{Galois} του $k$. Επιπλέον υποθέτουμε ότι η $K/k$ είναι αβελιανή, δηλαδή η $\Gal(K/k)$ 
+είναι αβελιανή ομάδα. Έστω $\q$ ένας πρώτος του $\mathcal{O}_K$ και $\p$ ένας πρώτος του $\mathcal{O}_k$ με $\q \mid \p$. Υπενθυμίζουμε 
+από την αλγεβρική θεωρία αριθμών ότι αν το $\p$ είναι αδιακλάδιστο στο $K$, τότε υπάρχει \tl{Frobenius} στοιχείο και ορίζεται καλά ως 
+$\operatorname{Frob}_\p$, που ανήκει στην $\Gal(K/k)$. Έστω $S$ να είναι το σύνολο των πρώτων ιδεωδών του $k$ που διακλαδίζονται στο $K$. 
+Ορίζουμε την απεικόνιση \tl{Artin} ως εξής.
+
+$$\psi_{K/k} : I^S \longrightarrow \Gal(K/k)$$
+$$ \p_1^{e_1} \cdots \p_r^{e_r} \longmapsto \prod\limits_{i=1}^r \operatorname{Frob}_{\p_i}^{e_i}$$ Επιπλέον, υπενθυμίζουμε ότι 
+έχουμε μια απεικόνιση νόρμας $\operatorname{Nm}_{K/k} : I_K \longrightarrow I_k$ που ορίζεται ως $\operatorname{Nm}_{K/k}(\q) = 
+\p^{f(\q \mid \p)}$, όπου $\p = \q \cap \mathcal{O}_k$. Έχουμε την ακόλουθη πρόταση η οποία βασίζεται στις ιδιότητες του στοιχείου 
+\tl{Frobenius} και το πώς συμπεριφέρεται ως προς τις επεκτάσεις σωμάτων.
+
+\begin{prop}
+    Έστω $L$ μια αβελιανή επέκταση του $k$, έτσι ώστε $k\subset K \subset L$ και $S$ ένα οποιοδήποτε πεπερασμένο σύνολο πρώτων του $k$ 
+    που στέκονται κάτω από όλους τους πρώτους που διακλαδίζονται στο $L$, μαζί με όσους πρώτους του $K$ στέκονται πάνω από τους 
+    πρώτους του $k$ που διαλέξαμε ήδη. Έχουμε ότι το ακόλουθο διάγραμμα είναι μεταθετικό.
+\end{prop}
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        I^S_K \arrow[rrr, "\psi_{L/K}"] \arrow[dd, "\operatorname{Nm}_{K/k}"'] &  &  & \Gal(L/K) \arrow[dd, hook] \\
+                                                                               &  &  &                            \\
+        I^S_k \arrow[rrr, "\psi_{L/k}"]                                        &  &  & \Gal(L/k)                 
+        \end{tikzcd}
+\end{figure}
+
+\begin{cor} Έστω $L$ μια αβελιανή επέκταση του $k$. Τότε 
+    $$\operatorname{Nm}_{L/k}(I^S_L) \subset \ker(\psi_{L/k}: I^S \longrightarrow \Gal(L/k))$$
+\end{cor}
+
+\begin{defn} Έστω $\psi: I^S \longrightarrow G$ ένας ομομορφισμός ομάδων. Λέμε ότι ο $\psi$ επιδέχεται έναν διαιρέτη αν υπάρχει διαιρέτης 
+    $\mathfrak{m}$ του $k$ τέτοιος ώστε $S(\mathfrak{m}) \subset S$ και $\psi(P_{\mathfrak{m},1}) =1$, δηλαδή ο $\psi$ επιδέχεται διαιρέτη 
+    $\mathfrak{m}$ αν και μόνο αν παραγοντοποιείται μέσα από το $C_\mathfrak{m}$.
+\end{defn}
+
+\begin{theorem}[Νόμος Αντιστροφής]
+    Έστω $K$ μια πεπερασμένη αβελιανή επέκταση του $k$ και $S$ το σύνολο των πρώτων του $k$ που διακλαδίζονται στο $K$. 
+    Η απεικόνιση \tl{Artin} $\psi_{K/k}:I^S \longrightarrow \Gal(K/k)$ επιδέχεται διαιρέτη $\mathfrak{m}$ με $S(\mathfrak{m}) = S$ 
+    και επάγει ισομορφισμό
+    $$I^S_k/ P_{\mathfrak{m},1}\operatorname{Nm}_{K/k}(I^S_K) \cong \Gal(K/k)$$
+\end{theorem}
+
+\noindent Αξίζει να σημειωθεί ότι αυτό το θεώρημα δεν υπόσχεται την ύπαρξη μια αβελιανής επέκτασης του $k$. Στην ουσία, διατυπώνει 
+ότι αν έχουμε ήδη μια αβελιανή επέκταση τότε αυτή θα είναι πηλίκο της \tl{ray} ομάδας κλάσεων με μια συγκεκριμένη υποομάδα, 
+την εικόνα της $I^S_K$ κάτω από την απεικόνιση νόρμας.
+
+\begin{defn}
+    Λέμε ότι μια υποομάδα $H\subset I^{S(m)}_k$ είναι μια \tl{congruence} υποομάδα \tl{modulo} $\mathfrak{m}$ αν $P_{\mathfrak{m},1} 
+    \subset H \subset I^{S(\mathfrak{m})}_k$.
+\end{defn}
+
+\begin{theorem} Έστω $H$ μια \tl{congruence} υποομάδα της $I^{S(\mathfrak{m})}$. Τότε υπάρχει μοναδική αβελιανή επέκταση $K/k$ με την μόνη πιθανή διακλάδωση να γίνεται στους πρώτους που διαιρούν το $\mathfrak{m}$ έτσι ώστε
+    $$H = P_{\mathfrak{m},1} \operatorname{Nm}_{K/k}(I^{S(\mathfrak{m})}_K)$$ και 
+    $$I^{S(\mathfrak{m})}_k / H \cong \Gal(K/k)$$ μέσα από την απεικόνιση \tl{Artin}.
+\end{theorem}
+
+\noindent Με άλλα λόγια, το θεώρημα μας αναφέρει ότι δοσμένης μιας $H$, το σώμα $K$ που αντιστοιχεί είναι τέτοιο ώστε να ισχύουν τα ακόλουθα:
+\begin{enumerate}
+    \item Το $K$ είναι αβελιανή επέκταση του $k$.
+    \item Ο εκθέτης $\mathfrak{m}(\pi) =0$ σημαίνει ότι το $\p$ δεν διακλαδίζεται στο $K$.
+    \item Τα πρώτα ιδεώδη που δεν είναι στο $S(\mathfrak{m})$ και διασπώνται στο $K$ είναι ακριβώς αυτά που περιέχονται στην $H$.
+\end{enumerate}
+
+\noindent Παρατηρούμε ότι αν έχουμε έναν διαιρέτη $\mathfrak{m}$ μπορούμε να θέσουμε ως $H= P_{\mathfrak{m},1}$ και να χρησιμοποιήσουμε 
+το θεώρημα ότι υπάρχει ένα σώμα $K_\mathfrak{m}$ τέτοιο ώστε 
+$$C_\mathfrak{m} \cong \Gal(K_\mathfrak{m}/k)$$ Αυτό το σώμα $K_\mathfrak{m}$ λέγεται \tl{ray} σώμα κλάσεων. Αξίζει να σημειωθεί 
+ότι οι πρώτοι του $k$ που διακλαδίζονται στο $K_\mathfrak{m}$ είναι ακριβώς οι πρώτοι που διαιρούν το $\mathfrak{m}$. Αν διαλέξουμε 
+$\mathfrak{m} =1$, τότε έχουμε ότι $C_\mathfrak{m} = C$ είναι η ομάδα κλάσεων ιδεωδών, όπως αναφέραμε πριν. Σε αυτήν την περίπτωση, 
+το αντίστοιχο \tl{ray} σώμα κλάσεων ονομάζεται {\em \tl{Hilbert} σώμα κλάσεων}. To \tl{Hilbert} σώμα κλάσεων είναι η μέγιστη αδιακλάδιστη 
+αβελιανή επέκταση του σώματος $k$. Γενικότερα, για ένα σώμα $K$ θα συμβολίζουμε το \tl{Hilbert} σώμα κλάσεων του με $H_K$.
+
+Για ένα σώμα $K \subset K_\mathfrak{m}$, θέτουμε $\operatorname{Nm}(C_{K,\mathfrak{m}}) = P_{\mathfrak{m},1} \operatorname{Nm}_{K/k}(I^{S(\mathfrak{m})}_K) (\operatorname{mod}P_{\mathfrak{m},1})$. Έχουμε το ακόλουθο πόρισμα που κατηγοριοποιεί τις αβελιανές επεκτάσεις.
+
+\begin{cor}
+    Σταθεροποιούμε έναν διαιρέτη $\mathfrak{m}$. Η απεικόνιση $K \longrightarrow \operatorname{Nm}(C_{K,\mathfrak{m}})$ είναι μια 1-1 
+    και επί αντιστοιχία από το σύνολο των αβελιανών επεκτάσεων του $k$ που περιέχονται στο $K_\mathfrak{m}$ και το σύνολο των 
+    υποομάδων της $C_\mathfrak{m}$. Επιπλέον, ισχύουν τα ακόλουθα:
+\end{cor}
+\begin{align*} 
+    K_1 \subset K_2 & \iff \operatorname{Nm}(C_{K_1,\mathfrak{m}}) \supset \operatorname{Nm}(C_{K_2,\mathfrak{m}}) \\
+    \operatorname{Nm}(C_{K_1K_2,\mathfrak{m}}) & = \operatorname{Nm}(C_{K_1,\mathfrak{m}}) \cap \operatorname{Nm}(C_{K_2,\mathfrak{m}}) \\
+    \operatorname{Nm}(C_{K_1\cap K_2,\mathfrak{m}}) &= \operatorname{Nm}(C_{K_1,\mathfrak{m}})\operatorname{Nm}(C_{K_2,\mathfrak{m}})
+\end{align*}
+
+\noindent Κλείνουμε την ενότητα με μια εφαρμογή του \tl{Hilbert} σώματος κλάσεων, το οποίο όπως θα δούμε έχει σημαντικό ρόλο σε όλο το υπόλοιπο 
+της συγκεκριμένης εργασίας. Έστω $K/E$ μια \tl{Galois} επέκταση σωμάτων αριθμών. Από τα προηγούμενα έχουμε έναν ισομορφισμό ομάδων
+$$C_K \cong \Gal(H_K/K).$$ Θα περιγράψουμε ότι αυτά τα δύο παραμένουν ισόμορφα κάτω από την δράση 
+της $\Gal(K/E)$, δηλαδή είναι ισόμορφα ως $\Gal(K/E)$-πρότυπα. Η δράση είναι ως εξής.
+
+$$\Gal(K/E) \times \Gal(H_K/K) \longrightarrow \Gal(H_K/K)$$
+$$ \tau \cdot \sigma = \tilde{\tau} \sigma \tilde{\tau}^{-1},$$ όπου επεκτείνουμε το $\tau$ σε ένα $\tilde{\tau}$ μέσα στην 
+$\Gal(H_K/K)$. Έστω $\p$ ένα πρώτο ιδεώδες του $K$. Μέσα από την απεικόνιση του \tl{Artin} έχουμε ότι $\p \longmapsto 
+\operatorname{Frob}_\pi$. Συνεπώς, το $\tau \pi$ απεικονίζεται στο $\operatorname{Frob}_{\tau \p} = 
+\tilde{\tau}\operatorname{Frob}_\p \tilde{\tau}^{-1} = \tau \cdot \operatorname{Frob}_\p$ όπως θέλαμε.
+
+\noindent Έχοντας τα $K$ και $E$ όπως προηγουμένως, υποθέτουμε ότι $H_E \cap K = E$. Αργότερα στο θεώρημα του \tl{Herbrand} θα 
+βασιστούμε στο γεγονός ότι η απεικόνιση νόρμας $C_K \longrightarrow C_E$ μεταξύ των ομάδων κλάσεων ιδεωδών είναι επιμορφισμός 
+και το ακόλουθο διάγραμμα είναι μεταθετικό:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        C_K \arrow[dd, "\operatorname{Norm}"'] \arrow[rrr, "\cong"] &  &  & \Gal(H_K/K) \arrow[dd, "\text{ περιορισμός}"] \\
+                                                                    &  &  &                                               \\
+        C_E \arrow[rrr, "\cong"]                                    &  &  & \Gal(H_E/E)                                  
+        \end{tikzcd}
+\end{figure}
+
+\noindent Πράγματι, καθώς $H_E\cap K =E$ έχουμε ότι $\Gal(H_EK/K) \cong \Gal(H_E/E)$ και καθώς $H_EK\subset H_K$, 
+παίρνουμε ότι η απεικόνιση $\Gal(H_K/K) \longrightarrow \Gal(H_E/E)$ είναι επί. Επιπλέον, το ότι το διάγραμμα είναι 
+μεταθετικό αποδεικνύεται χρησιμοποιώντας τις ιδιότητες του στοιχείου \tl{Frobenius}.

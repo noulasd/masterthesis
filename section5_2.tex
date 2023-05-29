@@ -1,0 +1,100 @@
+\section{Σύνδεση με Ομάδες Κλάσεων}
+
+
+Σε αυτήν την τελευταία ενότητα θα δώσουμε τους αναγκαίους ορισμούς ώστε να περιγράψουμε μια εφαρμογή της κύριας εικασίας στα μεγέθη των τάξεων των ομάδων κλάσεων ιδεωδών. Έστω $p$ ένας περιττός πρώτος και $F$ μια αβελιανή φανταστική επέκταση του $\Q$ βαθμού σχετικά πρώτου με το $p$. Έστω $\chi: \Gal(F/\Q)\longrightarrow \mathcal{O}_\chi^\times$ να είναι ένας περιττός χαρακτήρας. Θέτουμε $\Delta = \Gal(F/\Q)$. Θα βλέπουμε τον $\chi$ ως χαρακτήρα του $\Gal(\overline{\Q}/\Q)$. Έστω $g= [\mathcal{O}_\chi : \Z_p]$. Γράφουμε $A_F$ για την $p$-\tl{Sylow} 
+υποομάδα της ομάδας κλάσεων του $F$. Ως συνήθως, γράφουμε $A^\chi_F$ για την $\chi$-ισοτυπική συνιστώσα του $A_F$, δηλαδή
+
+$$A^\chi_F = A_F \otimes_{\Z_p[\Delta]} \mathcal{O}_\chi.$$
+
+\noindent Στόχος σε αυτή την ενότητα θα είναι με την χρήση της κύριας εικασίας να αποδειχτεί το παρακάτω αποτέλεσμα.
+
+\begin{theorem}
+    Υποθέτουμε ότι $\chi \neq \omega$, τότε 
+    $$|A^\chi_F| = |\mathcal{O}_\chi / (\mathcal{L}_p(0,\chi^{-1}\omega))|.$$ Ειδικότερα,
+    $$\nu_p(|A^\chi_F|) = g \cdot \nu_p (L(0,\chi^{-1}))$$ για κάποιο $g \in \mathbb{N}$, όπου $\nu_p(a)$ είναι η $p$-αδική εκτίμηση του $a$.
+\end{theorem}
+
+\noindent Για ευκολία, θα θεωρήσουμε ότι $\chi(p)\neq 1$. Αν και το θεώρημα ισχύει για την περίπτωση που $\chi(p)=1$, 
+είναι αρκετά πιο δύσκολο να αποδειχθεί και πρέπει να ανατρέξει κανείς στο \cite{MW}.
+
+Ξεκινάμε με την περίπτωση που $F = \Q^\chi$. Για να φτάσουμε στο αποτέλεσμα, θα αποδείξουμε κάτι ελάχιστα πιο γενικό. Έστω $K/E$ μια αβελιανή επέκταση σωμάτων αριθμών με $[K:E]$ να είναι σχετικά πρώτο ως προς το $p$ και το $\chi$ να παραγοντοποιείται μέσα από το $\Gal(E/\Q)$. Δείχνουμε ότι η φυσιολογική απεικόνιση
+
+$$A^\chi_E \longrightarrow A^\chi_K$$ είναι ισομορφισμός. Έχοντας αυτό το αποτέλεσμα είναι εύκολο να δείξουμε την περίπτωση που $F=\Q^\chi$ με το να θέσουμε $K=F$ και $E=\Q^\chi$. Ξεκινάμε με το ακόλουθο λήμμα από την αλγεβρική θεωρία αριθμών.
+
+\begin{lemma}
+    Έστω $K/E$ μια \tl{Galois} επέκταση σωμάτων αριθμών με $[K:E] = n$ και $\gcd(n,h_E) = 1$. Τότε η φυσιολογική απεικόνιση $C_E \longrightarrow C_K$ είναι μια εμφύτευση.
+\end{lemma}
+
+\begin{proof}
+    Η φυσιολογική απεικόνιση μεταξύ των ομάδων κλάσεων $C_E \longrightarrow C_K$ προκύπτει από την απεικόνιση
+    $$I_E \longrightarrow I_K$$
+    $$\mathfrak{a} \longmapsto \mathfrak{a}\mathcal{O}_K,$$ όπου $I_E$ είναι τα κλασματικά ιδεώδη του $\mathcal{O}_E$ και όμοια 
+    για το $I_K$. Έστω $\mathfrak{a} \in I_E$ να ανήκει στον πυρήνα, δηλαδή να γίνεται κύριο στο $I_K$. Άρα υπάρχει $a \in K$ τέτοιο 
+    ώστε $\mathfrak{a}\mathcal{O}_K = (a)$. Υπενθυμίζουμε ότι αν απεικονίσουμε το $\mathfrak{a}$ μέσα στο $I_K$ και πίσω στο $I_E$ 
+    μέσω της απεικόνισης νόρμας, παίρνουμε ότι $\operatorname{Nm}(\mathfrak{a}\mathcal{O}_K) = \mathfrak{a}^{[K:E]}$. Επιπλέον, καθώς το $\mathfrak{a}\mathcal{O}_K$ είναι κύριο, έχουμε $\operatorname{Nm}(\mathfrak{a}\mathcal{O}_K) = (\operatorname{Nm}(a))$. Συνεπώς, 
+    έχουμε ότι $\mathfrak{a}^{[K:E]} = (\operatorname{Nm}(a))$, δηλαδή το $\mathfrak{a}^{[K:E]}$ είναι $0$ στην ομάδα κλάσεων του $E$. Ωστόσο, έχουμε ότι η τάξη του $\mathfrak{a}$ διαιρεί το $[K:E]$ καθώς και το $h_E$. Εφόσον αυτά τα δύο τα θεωρήσαμε σχετικά πρώτα, έπεται ότι η τάξη του $\mathfrak{a}$ είναι $1$ και άρα η απεικόνιση είναι εμφύτευση.
+\end{proof}
+
+\noindent Χρησιμοποιώντας αυτό το λήμμα βλέπουμε ότι το $A^\chi_E$ εμφυτεύεται μέσα στο $A^\chi_K$. Καθώς το $\chi$ παραγοντοποιείται 
+μέσα από την ομάδα $\Gal(E/\Q)$ έπεται ότι είναι τετριμμένο στην $\Gal(K/E)$. Ειδικότερα, από τον ορισμό του $A^\chi_K$ βλέπουμε ότι ένα $\sigma \in \Gal(K/E)$ διατηρεί τα ιδεώδη στο $A^\chi_K$ αναλλοίωτα. Πιο συγκεκριμένα,
+για κάθε πρώτο ιδεώδες $\p$ στο $A^\chi_K$, έχουμε ότι $\sigma \p = \p$ για κάθε $\sigma \in\Gal(K/E)$. Ωστόσο, 
+ξέρουμε ότι η $\Gal(K/E)$ μεταθέτει τους πρώτους $\p$ που στέκονται πάνω από έναν ίδιο πρώτο $\q$ του $E$. Άρα, μπορεί να υπάρχει μόνο ένας πρώτος πάνω από το $\q$ για κάθε πρώτο ιδεώδες $\q \in A^\chi_E$. Αυτό μας δείχνει ότι η παραπάνω απεικόνιση είναι επιμορφισμός και άρα ισομορφισμός όπως αναφέραμε.
+
+Έστω $L_n,L,X_n$ και $X$ να είναι όπως στην προηγούμενη ενότητα. Συγκεκριμένα, ο στόχος μας είναι να προσδιορίσουμε την $p$-αδική εκτίμηση του $|X_0^\chi|$. Από την επιλογή μας για το $\chi$ έχουμε ότι 
+$X^\chi_0 = (X/TX)^\chi = X^\chi /TX^\chi$. Υπενθυμίζουμε ότι το $X^\chi$ είναι ένα πεπερασμένα παραγόμενο $\Lambda_\chi$-πρότυπο στρέψης. Θέτουμε $\pi$ να έιναι ένας \tl{uniformizer} του $\mathcal{O}_\chi$. Από τα προηγούμενα κεφάλαια έχουμε ότι 
+
+$$X^\chi \sim \left(\bigoplus\limits_i \Lambda_\chi / (\pi^{\mu_{\chi,i}})\right) \oplus \left( \bigoplus\limits_j 
+\Lambda_\chi/(f_{\chi,j}(T)^{m_j})\right),$$ όπου 
+θέσαμε $\mu_\chi = \sum \mu_{\chi,i}$ και τα $f_{\chi,j}$ είναι ανάγωγα και \tl{distinguished} πολυώνυμα. Καθώς υποθέτουμε ότι 
+ο $\chi$ είναι περιττός χαρακτήρας, έχουμε ότι ο παραπάνω ψευδο-ισομορφισμός είναι μια εμφύτευση με πεπερασμένο συνπυρήνα $C$. 
+Για μια απόδειξη, μπορεί να ανατρέξει κανείς στην πρόταση 13.28 στο \cite{Wash}. Συνεπώς, έχουμε το διάγραμμα
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        0 \arrow[r] & X^\chi \arrow[d, "T^{(1)}"] \arrow[r] & {\left(\bigoplus\limits_i \Lambda_\chi / (\pi^{\mu_{\chi,i}})\right) \oplus \left( \bigoplus\limits_j \Lambda_\chi/(f_{\chi,j}(T)^{m_j})\right)} \arrow[d, "T^{(2)}", shift right=4] \arrow[r] & C \arrow[d, "T^{(3)}"] \arrow[r] & 0 \\
+        0 \arrow[r] & X^\chi \arrow[r]                      & {\left(\bigoplus\limits_i \Lambda_\chi / (\pi^{\mu_{\chi,i}})\right) \oplus \left( \bigoplus\limits_j \Lambda_\chi/(f_{\chi,j}(T)^{m_j})\right)} \arrow[r]                                     & C \arrow[r]                      & 0
+        \end{tikzcd}
+\end{figure} 
+\noindent όπου με $T^{(i)}$ εννοούμε σε κάθε περίπτωση πολλαπλασιασμό με $T$.
+
+\begin{lemma} Ο πυρήνας της απεικόνισης $T^{(2)}$ είναι $0$.
+\end{lemma}
+
+\begin{proof} Υποθέτουμε ότι $\ker T^{(2)} \neq 0$. Τότε θα ισχύει ότι $T \mid \prod_j f_{\chi,j}(T)^{m_j}$. Τότε, από την κύρια εικασία επάγεται ότι 
+    $$T \mid G_{\chi^{-1}\omega}((1+p)(1+T)^{-1}-1),$$ δηλαδή έχουμε 
+    \begin{align*}
+        0 &= G_{\chi^{-1}\omega}((1+p)-1) \\ 
+        &= \mathcal{L}_p(0,\chi^{-1}\omega) \\
+        &= (1-\chi^{-1}(p))L(0,\chi^{-1}),
+    \end{align*} όπου έχουμε χρησιμοποιήσει ότι $\chi \neq \omega$ για να συμπεράνουμε ότι $H_{\chi^{-1}\omega}=1$. Ωστόσο, έχουμε υποθέσει ότι $\chi(p)\neq 1$ από υπόθεση και $L(0,\chi^{-1}) \neq 0$, εφόσον ο $\chi$ είναι περιττός χαρακτήρας. Συνεπώς, ο πυρήνας είναι αναγκαστικά τετριμμένος.
+\end{proof}
+
+\noindent Μπορούμε τώρα να εφαρμόσουμε το λήμμα του φιδιού καθώς και ότι $\ker T^{(2)} = 0$ για να πάρουμε την ακριβή ακολουθία
+
+$$0\longrightarrow \ker T^{(3)}  \longrightarrow \coker T^{(1)} \longrightarrow \coker T^{(2)} \longrightarrow \coker T^{(3)} \longrightarrow 0$$ Έχουμε επιπλέον την ακριβή ακολουθία
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzcd}
+        0 \arrow[r] & {C[T]} \arrow[r] & C \arrow[r, "\cdot T"] & C \arrow[r] & C/TC \arrow[r] & 0
+        \end{tikzcd}
+\end{figure} 
+\noindent όπου $C[T] = \{c \in C: \ Tc = 0\}$. Χρησιμοποιούμε τώρα το γεγονός ότι αν έχουμε μια ακριβή ακολουθία πεπερασμένων ομάδων
+$$0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow D \longrightarrow 0$$ ισχύει ότι $|A| \cdot |B| \cdot |C|^{-1} \cdot |D|^{-1} = 1$, για να συμπεράνουμε ότι $|C[T]| = |C/TC|$. Παρατηρούμε ότι $C[T] = \ker T^{(3)}$ και $C/TC = \coker T^{(3)}$ παίρνουμε ότι $|\coker T^{(1)}| = |\coker T^{(2)}|$. Συνεπώς, έχουμε τις ακόλουθες ισότητες.
+
+\begin{align}
+    |A^\chi_F| &= |X^\chi_0| \nonumber \\
+    &= |X^\chi / TX^\chi| \nonumber\\
+    &= |\coker T^{(1)} | \nonumber\\
+    &= |\coker T^{(2)} | \nonumber\\
+    &= \left| \bigoplus\limits_i \Lambda_\chi / (\pi^{\mu_{\chi,i}}, T) \right| \cdot \left|\bigoplus\limits_j \Lambda_\chi / (f_{\chi,j}(T)^{m_j}, T) \right| \nonumber \\
+    &= |\Lambda_\chi/(f_\chi(T),T)| \label{eq5.2.1} \\
+    &= |\mathcal{O}_\chi /f_\chi(0)| \nonumber\\
+    &= |\mathcal{O}_\chi/G_{\chi^{-1}\omega}(p)| \label{eq5.2.2}\\
+    &= |\mathcal{O}_\chi / \mathcal{L}_p (0,\chi^{-1}\omega)|, \nonumber
+\end{align}
+
+\noindent όπου χρησιμοποιήσαμε στην ισότητα (\ref{eq5.2.1}) ότι $\mu_\chi = 0$ από την κύρια εικασία καθώς βρισκόμαστε σε αβελιανή επέκταση. Επιπλέον, χρησιμοποιήσαμε την κύρια εικασία και στην ισότητα (\ref{eq5.2.2}). Ειδικότερα, έχουμε ότι 
+$$|\mathcal{O}_\chi / \mathcal{L}_p (0,\chi^{-1}\omega)| = |\mathcal{O}_\chi / \left( L(0,\chi^{-1})(1-\chi^{-1}(p))\right) |.$$ Συνεπώς,
+$$ \nu_p (|A^\chi_F|) = \nu_p \left(\left| \mathcal{O}_\chi / \left( L(0,\chi^{-1})(1-\chi^{-1}(p))\right)\right|\right) = g \cdot \nu_p (L(0,\chi^{-1}))$$ όπως αναφέραμε. 

@@ -19,7 +19,13 @@
 %ελληνικοι χαρακτηρες σε μαθ pdf utf-8
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tikz-cd}
-%\usepackage{hyperref}
+
+
+
+\usepackage{hyperref}
+
+
+
 \usepackage{xcolor}
 \usepackage{framed}%frames
 \usepackage{float}
@@ -36,12 +42,15 @@
 \usepackage{graphicx,import}
 
 \usepackage{titlesec}    
+%\titleformat{\chapter}[display]
+%{\normalfont%
+    %\LARGE% %change this size to your needs for the first line
+    %\bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
+    %\LARGE %change this size to your needs for the second line
+    %}
 \titleformat{\chapter}[display]
-{\normalfont%
-    \huge% %change this size to your needs for the first line
-    \bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
-    \Huge %change this size to your needs for the second line
-    }
+    {\normalfont\bfseries}{}{0pt}{\LARGE}
+
 
 \usepackage[n, % o r lambda
 advantage,
@@ -66,6 +75,8 @@ keys ]{cryptocode}
 \newtheorem{prop}[theorem]{Πρόταση}
 \newtheorem{cor}[theorem]{Πόρισμα}
 \newtheorem{lemma}[theorem]{Λήμμα}
+\newtheorem*{conj}{Εικασία}
+%\newtheorem*{remark}{Παρατήρηση}
 %\newtheorem{lemma}{Λήμμα}
 %\newtheorem{example}{Παράδειγμα}
 %\newtheorem{defn}{Ορισμός}
@@ -91,8 +102,10 @@ keys ]{cryptocode}
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\Gal}{\operatorname{Gal}}
 \newcommand{\Frob}{\operatorname{Frob}}
+\newcommand{\coker}{\operatorname{coker}}
 \newcommand{\p}{\mathfrak{p}}
 \newcommand{\q}{\mathfrak{q}}
+\newcommand{\Lo}{\Lambda_\mathcal{O}}
 
 
 \newcommand{\Sheaf}{(\So, \pi, X)}
